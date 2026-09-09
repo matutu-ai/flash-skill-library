@@ -1,0 +1,462 @@
+[
+  {
+    "id": "oil-motion",
+    "name": "Oil Motion",
+    "subtitle": "把滚动，变成一段故事",
+    "category": "自动化",
+    "categoryKey": "automation",
+    "description": "将滚动、拖拽等交互意图转换为动效方案、动画素材与网页运行时，明确画面如何推进、停住和退回。",
+    "promptText": "使用 oil-motion，为公开 Skill 集合网站设计档案抽屉随滚动打开的动效，停止滚动时定格，向上滚动时退回。",
+    "input": "页面用途、主体与风格、交互方式、目标设备，以及已有图片或视频。",
+    "output": [
+      "视觉与交互方案",
+      "关键帧及动画生产计划",
+      "素材时间轴与网页运行时"
+    ],
+    "requirements": [
+      "生成与处理素材需要 Python 3、Pillow、ffmpeg 和 ffprobe。",
+      "视频生成需要配置相应模型服务。",
+      "下载提供 SKILL.md 单文件预览；完整流程还需要配套 scripts、references 和 assets。"
+    ],
+    "workflow": [
+      "锁定主体、视觉、交互、连续性、画幅和目标设备",
+      "建立关键帧、片段、播放策略与质量目标",
+      "先制作并验收首组关键帧、首段视频和真实页面挂载",
+      "根据背景与时间控制选择媒体格式和运行时控制器",
+      "逐段生成、验收、编译时间轴并接入网页运行时",
+      "在目标尺寸、DPR、反向操作、移动端和降级条件下验收"
+    ],
+    "useCases": [
+      "设计由滚动推进并可反向退回的网页叙事",
+      "制作由指针、拖拽、触摸或设备方向驱动的产品动效",
+      "将角色、材质、遮挡等语义变化转换为可运行的动画素材"
+    ],
+    "example": "使用 oil-motion，为公开 Skill 集合网站设计档案抽屉随滚动打开的动效，停止滚动时定格，向上滚动时退回。",
+    "tags": [
+      "网页动效",
+      "滚动交互",
+      "动画时间轴",
+      "Motion Design"
+    ],
+    "model": [
+      "minimax/minimax-h3-max"
+    ],
+    "includedSkills": [
+      "oil-motion"
+    ],
+    "version": "v1.0.0",
+    "author": "oil-oil",
+    "created": "2026-09-08",
+    "updated": "2026-09-09",
+    "license": "MIT",
+    "licenseNote": "按仓库 LICENSE 条款使用。",
+    "icon": "spark",
+    "sourceLabel": "oil-oil/oil-motion",
+    "sourceUrl": "https://github.com/oil-oil/oil-motion",
+    "entryUrl": "https://github.com/oil-oil/oil-motion/blob/main/SKILL.md",
+    "fileName": "skills/oil-motion/SKILL.md",
+    "url": "skills/oil-motion/"
+  },
+  {
+    "id": "seedance2-5-skill",
+    "name": "Seedance 2.5 · 商业视频导演",
+    "subtitle": "把创意编译成可拍的 Seedance 提示词",
+    "category": "AI视频",
+    "categoryKey": "video",
+    "description": "把产品、人物、广告需求和参考素材编排为分镜，结合人物真实感与连续性检查，输出可直接投喂的视频提示词。",
+    "promptText": "使用 seedance-2-5-prompt，把我提供的产品、人物、场景素材和广告 Brief 编排为可直接投喂 Seedance 2.5 的提示词。锁定产品与人物身份，按素材职责设计时间轴、镜头与声音，并完成 Human Realism、连续性、Prompt Readiness 和生成前风险检查。",
+    "input": "产品、人物或场景图片，产品资料，参考视频，完整分镜，广告 Brief，已有提示词或混合视频创意。",
+    "output": [
+      "ONE-SHOT PROMPT",
+      "SHOT-BY-SHOT PROMPT",
+      "DIRECTOR PACKAGE"
+    ],
+    "requirements": [
+      "实际视频生成需要 Seedance 2.5、即梦或豆包的相应能力。",
+      "完整流程需要源仓库中的 QUICK-START、workflow、template、schema 与 Human Realism 资源。",
+      "本 Skill 不承担海外市场研究、TikTok 趋势研究或广告投放策略。"
+    ],
+    "workflow": [
+      "识别并规范产品、人物、场景、参考素材与广告目标",
+      "分析主体并建立产品锁与人物身份锁",
+      "设计创意结构、Hook、分镜、镜头语言与声音",
+      "编译 Seedance 2.5 可执行提示词",
+      "检查人物真实感、连续性、可拍性与生成前风险"
+    ],
+    "useCases": [
+      "产品与人物商业视频提示词",
+      "广告 Brief 或分镜导演化",
+      "参考视频结构拆解与原创方案",
+      "已有 Seedance 提示词诊断优化"
+    ],
+    "example": "使用 seedance-2-5-prompt，把这组产品图、人物图和 15 秒广告 Brief 编译为 ONE-SHOT PROMPT，锁定产品与人物，并完成 Human Realism、连续性和风险检查。",
+    "tags": [
+      "Seedance 2.5",
+      "商业视频",
+      "分镜",
+      "人物真实感",
+      "提示词编译"
+    ],
+    "model": [
+      "Seedance 2.5"
+    ],
+    "includedSkills": [
+      "seedance-2-5-prompt"
+    ],
+    "version": "未声明",
+    "author": "matutu-ai",
+    "created": "2026-08-19",
+    "updated": "2026-09-07",
+    "license": "MIT",
+    "licenseNote": "按仓库 LICENSE 条款使用。",
+    "icon": "film",
+    "sourceLabel": "matutu-ai/seedance2.5-skill",
+    "sourceUrl": "https://github.com/matutu-ai/seedance2.5-skill",
+    "entryUrl": "https://github.com/matutu-ai/seedance2.5-skill/blob/main/seedance-2-5-prompt/SKILL.md",
+    "fileName": "skills/seedance2-5-skill/SKILL.md",
+    "url": "skills/seedance2-5-skill/"
+  },
+  {
+    "id": "tiktok-shop-seedance-2-5-skill",
+    "name": "TikTok Shop · 海外电商视频",
+    "subtitle": "从市场信号到电商视频成片方案",
+    "category": "AI视频",
+    "categoryKey": "video",
+    "description": "围绕产品与目标市场完成趋势研究、爆款拆解、UGC 脚本、分镜和 Seedance 2.5 提示词，支持一致性检查与批量生产。",
+    "promptText": "使用 overseas-ecommerce-seedance，为我提供的产品制作面向目标国家与平台的海外电商短视频方案。请完成产品和受众分析、市场本地化、UGC 脚本、分镜、摄影、声音与 Seedance 2.5 提示词，并做一致性 QA；涉及近期趋势时只使用有日期和来源的真实数据。",
+    "input": "产品图片、产品链接、TikTok 或 Reels 参考视频、目标国家与平台、时长、卖点，或趋势与批量生产请求。",
+    "output": [
+      "产品、受众、市场与趋势分析",
+      "UGC 脚本、分镜、摄影与声音方案",
+      "Seedance 2.5 提示词及一致性 QA"
+    ],
+    "requirements": [
+      "近期趋势判断需要真实实时数据；不可用时必须标记 LIVE DATA UNAVAILABLE。",
+      "实际视频生成需要 Seedance 2.5；视频和音频分析可能依赖 ffmpeg、ffprobe、yt-dlp 与转写工具。",
+      "真人肖像、竞品素材和受版权保护内容必须具有相应授权。"
+    ],
+    "workflow": [
+      "根据产品、链接、参考视频或趋势请求自动选择工作流",
+      "分析产品、受众与目标市场本地化",
+      "研究趋势或拆解爆款机制，区分实时数据与静态 Pattern",
+      "生成 UGC 脚本、分镜、摄影、声音与 Seedance 2.5 提示词",
+      "完成产品、人物、商业和 Seedance 一致性检查"
+    ],
+    "useCases": [
+      "TikTok Shop 海外电商短视频",
+      "UGC 广告与产品视频",
+      "趋势、爆款与评论洞察",
+      "Seedance 2.5 批量视频生产"
+    ],
+    "example": "使用 overseas-ecommerce-seedance，为我提供的产品制作面向美国 TikTok Shop 的 15 秒 UGC 视频方案，输出产品分析、英文口播、分镜和 Seedance 2.5 提示词；没有实时趋势数据时明确标注。",
+    "tags": [
+      "TikTok Shop",
+      "UGC",
+      "海外电商",
+      "趋势研究",
+      "Seedance 2.5"
+    ],
+    "model": [
+      "Seedance 2.5"
+    ],
+    "includedSkills": [
+      "overseas-ecommerce-seedance"
+    ],
+    "version": "1.0.0",
+    "author": "matutu-ai",
+    "created": "2026-08-26",
+    "updated": "2026-09-06",
+    "license": "未声明",
+    "licenseNote": "公开可见不等于授权商用，使用前请核对仓库说明。",
+    "icon": "film",
+    "sourceLabel": "matutu-ai/TikTok-Shop-Seedance-2.5-skill",
+    "sourceUrl": "https://github.com/matutu-ai/TikTok-Shop-Seedance-2.5-skill",
+    "entryUrl": "https://github.com/matutu-ai/TikTok-Shop-Seedance-2.5-skill/blob/main/overseas-ecommerce-seedance/SKILL.md",
+    "fileName": "skills/tiktok-shop-seedance-2-5-skill/SKILL.md",
+    "url": "skills/tiktok-shop-seedance-2-5-skill/"
+  },
+  {
+    "id": "geo",
+    "name": "GEO V3 · 企业增长闭环",
+    "subtitle": "从企业资料到验证闭环",
+    "category": "GEO",
+    "categoryKey": "geo",
+    "description": "将企业资料转化为可追溯的证据、关键词、九大画像、内容矩阵与发布策略，并通过验证和缺口分析持续优化。",
+    "promptText": "使用 geo-keyword-profile-template 分析我提供的企业资料。先说明 GEO V3 框架、已有事实与资料缺口，再按正式流程生成简约版关键词和九大画像；不要虚构企业、案例、资质、数据或验证结果。",
+    "input": "企业介绍、产品或服务资料、案例、图片、docx、xlsx、文本或网页链接，以及用户的生成、调整、批量或验证指令。",
+    "output": [
+      "企业 GEO Profile 与证据记录",
+      "关键词矩阵、九大画像与垂直画像",
+      "内容矩阵、发布策略、验证结果与缺口队列"
+    ],
+    "requirements": [
+      "企业事实与结论需要可验证来源；缺失信息必须明确标注。",
+      "完整执行需要按 INDEX.md 路由读取仓库中的 schemas、workflows、templates 与 references。",
+      "任何客户语料库读取、创建或更新均需遵守正式入口中的确认规则。"
+    ],
+    "workflow": [
+      "清洗企业资料并区分事实、证据与缺失项",
+      "建立企业 GEO Profile、行业研究与竞争研究",
+      "生成搜索意图、关键词矩阵、九大画像与垂直画像",
+      "规划内容矩阵与动态发布策略",
+      "执行 GEO 验证、缺口分析、内容补强与再次验证"
+    ],
+    "useCases": [
+      "企业 GEO 关键词规划",
+      "企业与垂直业务画像生成",
+      "内容矩阵与发布策略制定",
+      "GEO 验证与缺口分析"
+    ],
+    "example": "使用 GEO V3 · 企业增长闭环，分析我提供的企业资料，先给出仓库框架摘要和资料缺口，再生成简约版关键词与九大画像。",
+    "tags": [
+      "GEO",
+      "关键词策略",
+      "企业画像",
+      "内容规划",
+      "证据管理"
+    ],
+    "model": [],
+    "includedSkills": [
+      "geo-keyword-profile-template"
+    ],
+    "version": "3.0.6",
+    "author": "matutu-ai",
+    "created": "2026-08-24",
+    "updated": "2026-09-07",
+    "license": "MIT",
+    "licenseNote": "按仓库 LICENSE 条款使用。",
+    "icon": "search",
+    "sourceLabel": "matutu-ai/GEO",
+    "sourceUrl": "https://github.com/matutu-ai/GEO",
+    "entryUrl": "https://github.com/matutu-ai/GEO/blob/main/SKILL.md",
+    "fileName": "skills/geo/SKILL.md",
+    "url": "skills/geo/"
+  },
+  {
+    "id": "geo-bd",
+    "name": "GEO-BD · 企业 GEO 诊断",
+    "subtitle": "看清 AI 知道什么，也看清下一步",
+    "category": "GEO",
+    "categoryKey": "geo",
+    "description": "根据企业事实、AI 认知记录、竞争情况和证据，输出 GEO 诊断、机会评分、行动计划与复测报告。",
+    "promptText": "使用 geo-diagnostic-engine，根据我提供的企业事实、证据、真实 AI 观察和已确认竞品生成 Executive GEO 诊断。所有分数都要可追溯；缺失数据保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA，并给出机会排序、P0 至 P3 行动计划和复测方法。",
+    "input": "企业资料 JSON，包括公司事实、材料、真实 AI observations、已确认竞品、证据、问题、关键词方向、当前指标与验证约束。",
+    "output": [
+      "Executive、Operational 或 Technical 分层诊断报告",
+      "diagnostic.json 与可选 report.json",
+      "GEO 缺口、机会排序、行动计划与复测方案"
+    ],
+    "requirements": [
+      "完整 AI 表现判断需要真实 observed 或 provided AI 记录；模拟记录不参与评分。",
+      "竞品与 Evidence 需要来源和状态，缺失数据必须保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA。",
+      "运行仓库诊断脚本需要 Python 3；默认可使用 ManualProvider 或 OfflineProvider。"
+    ],
+    "workflow": [
+      "读取客户资料并确认已有与缺失内容",
+      "建立企业实体、Evidence Graph 与 AI 认知记录",
+      "生成 Query Matrix 并分析竞品差距、EEAAP 与 EEAT",
+      "计算 GEO Gap、Opportunity Score 与分级行动计划",
+      "生成分层报告、验证计划与 Before/After 复测"
+    ],
+    "useCases": [
+      "企业 GEO 全链路诊断",
+      "AI 认知与推荐缺席排查",
+      "竞品、证据和机会分析",
+      "讯灵账户前置背调与复测"
+    ],
+    "example": "使用 GEO Diagnostic Engine V3，根据这份企业资料和真实 AI 观察生成 Executive GEO 诊断；缺失数据保持 UNKNOWN，并给出 P0 至 P3 行动与复测计划。",
+    "tags": [
+      "GEO 诊断",
+      "AI 认知",
+      "竞品分析",
+      "证据图谱",
+      "复测报告"
+    ],
+    "model": [],
+    "includedSkills": [
+      "geo-diagnostic-engine"
+    ],
+    "version": "V3",
+    "author": "matutu-ai",
+    "created": "2026-08-27",
+    "updated": "2026-09-08",
+    "license": "未声明",
+    "licenseNote": "公开可见不等于授权商用，使用前请核对仓库说明。",
+    "icon": "search",
+    "sourceLabel": "matutu-ai/GEO-BD",
+    "sourceUrl": "https://github.com/matutu-ai/GEO-BD",
+    "entryUrl": "https://github.com/matutu-ai/GEO-BD/blob/main/geo-account-precheck/SKILL.md",
+    "fileName": "skills/geo-bd/SKILL.md",
+    "url": "skills/geo-bd/"
+  },
+  {
+    "id": "danyuange",
+    "name": "国际版 GEO · 九大单元",
+    "subtitle": "一套资料，两份一致的九大单元工作簿",
+    "category": "自动化",
+    "categoryKey": "automation",
+    "description": "先根据客户真实资料判定制造商或服务商，再按对应官方模板导出结构一致的英文原版、纯中文分析版与独立缺失资料清单。",
+    "promptText": "使用 danyuange，读取我提供的客户资料。先根据真实填写字段判断客户是制造商还是服务商，再严格使用对应官方模板输出英文原版、纯中文分析版两份九大单元工作簿，并单独输出补充资料清单。不要使用模板示例补全客户事实。",
+    "input": "国际版 GEO 下单表、制造行业或服务行业九大单元资料，以及仓库提供的两份官方模板。",
+    "output": [
+      "英文原版九大单元工作簿",
+      "纯中文分析版九大单元工作簿",
+      "独立补充资料清单"
+    ],
+    "requirements": [
+      "需要配套的制造商或服务商官方 xlsx 模板及 references 文件。",
+      "所有内容必须来自客户真实填写资料，缺失字段保持空白并列入独立清单。",
+      "执行环境需要能够读取和写入 xlsx 文件。"
+    ],
+    "workflow": [
+      "依据客户真实填写字段判定制造商或服务商",
+      "选择对应官方模板并清空示例数据",
+      "把客户内容映射到官方字段",
+      "导出结构一致的英文原版与纯中文分析版工作簿",
+      "单独整理缺失资料清单并完成交付自查"
+    ],
+    "useCases": [
+      "国际版 GEO 九大单元交付",
+      "制造商资料标准化",
+      "服务商资料标准化",
+      "中英文工作簿同步整理"
+    ],
+    "example": "使用国际版 GEO · 九大单元，先判断这份客户资料属于制造商还是服务商，再按官方模板输出英文原版、纯中文分析版和独立补充资料清单。",
+    "tags": [
+      "GEO",
+      "九大单元",
+      "双语交付",
+      "Excel",
+      "制造商与服务商"
+    ],
+    "model": [],
+    "includedSkills": [
+      "danyuange"
+    ],
+    "version": "未声明",
+    "author": "matutu-ai",
+    "created": "2026-08-26",
+    "updated": "2026-09-03",
+    "license": "未声明",
+    "licenseNote": "公开可见不等于授权商用，使用前请核对仓库说明。",
+    "icon": "file",
+    "sourceLabel": "matutu-ai/danyuange",
+    "sourceUrl": "https://github.com/matutu-ai/danyuange",
+    "entryUrl": "https://github.com/matutu-ai/danyuange/blob/main/SKILL.md",
+    "fileName": "skills/danyuange/SKILL.md",
+    "url": "skills/danyuange/"
+  },
+  {
+    "id": "surreal-pop-collage",
+    "name": "超现实波普拼贴",
+    "subtitle": "黑白现实里，只留一处不对劲",
+    "category": "AI图片",
+    "categoryKey": "image",
+    "description": "保留照片主体的黑白真实感，用大幅平涂色形和一个不可能的巨物，构成明亮、可识别的超现实拼贴画。",
+    "promptText": "使用 surreal-pop-collage，把我提供的照片改造成竖版 3:4 超现实波普拼贴。保留主体为清晰可识别的黑白现实锚，从原图推导两至三个平涂色形，并且全图只使用一个有场景来源的不可能巨物；生成后简短说明色彩和巨物的来源。",
+    "input": "一张用户提供的风景、城市、人物或文化地标照片，以及可选的画幅和表达方向。",
+    "output": [
+      "超现实波普拼贴图像",
+      "一至三句色形与巨物来源说明",
+      "用户明确要求时提供完整生成提示词"
+    ],
+    "requirements": [
+      "需要可接收参考图的图像生成工具。",
+      "主体需保持可识别；色形和唯一巨物都必须能从原图或场景典故中找到来源。",
+      "生成提示词不放中文文字；中文标题需要后期排版。"
+    ],
+    "workflow": [
+      "读取照片并提取锚点主体、区域边界、原生色、动势与场景典故",
+      "从原图推导两至三个平涂色形",
+      "选择唯一一个源自场景的不可能巨物",
+      "编译四段式图像提示词并生成作品",
+      "按识别度、单一巨物、来源、平涂与明亮度完成质量检查"
+    ],
+    "useCases": [
+      "风景照片超现实再创作",
+      "城市或文化地标波普海报",
+      "人物照片黑白与平涂拼贴"
+    ],
+    "example": "使用 surreal-pop-collage，把这张城市街景做成竖版 3:4 超现实波普拼贴；保留主体黑白真实感，从原图推导色形，并且全图只放一个不可能的巨物。",
+    "tags": [
+      "照片改造",
+      "波普拼贴",
+      "超现实",
+      "平涂色块",
+      "海报"
+    ],
+    "model": [],
+    "includedSkills": [
+      "surreal-pop-collage"
+    ],
+    "version": "未声明",
+    "author": "未署名",
+    "created": "2026-08-20",
+    "updated": "2026-08-20",
+    "license": "MIT",
+    "licenseNote": "按仓库 LICENSE 条款使用；许可证文件未署名作者。",
+    "icon": "image",
+    "sourceLabel": "matutu-ai/https-github.com-2998980-hue-surreal-pop-collage",
+    "sourceUrl": "https://github.com/matutu-ai/https-github.com-2998980-hue-surreal-pop-collage",
+    "entryUrl": "https://github.com/matutu-ai/https-github.com-2998980-hue-surreal-pop-collage/blob/main/SKILL.md",
+    "fileName": "skills/surreal-pop-collage/SKILL.md",
+    "url": "skills/surreal-pop-collage/"
+  },
+  {
+    "id": "gathered-scenes-zine-skill",
+    "name": "拾景 Zine · 影像创作集合",
+    "subtitle": "把普通画面，重新装订成一页",
+    "category": "AI图片",
+    "categoryKey": "image",
+    "description": "围绕用户提供的真实照片，提供纸感实景拼贴、影像蒸馏与莫兰迪电影海报三种创作路径。",
+    "promptText": "使用 gathered-scenes-zine-skill 集合索引分析我提供的照片与创作目标，只选择一个最合适的子 Skill：保留真实现场时选 scenes-gathered-zine-v1-3，不保留照片、重新表达情绪时选 scene-distillation-zine-v1-3，需要电影标题与版式时选 morandi-cinematic-poster-zeejay。选择后严格按对应原始 SKILL.md 执行。",
+    "input": "一张用户提供的真实照片，以及希望保留的主体关系、文字语言、情绪方向或电影海报诉求。",
+    "output": [
+      "纸感实景拼贴海报",
+      "影像蒸馏原创插画",
+      "莫兰迪电影感摄影海报"
+    ],
+    "requirements": [
+      "需要可接收参考图的图像生成工具。",
+      "必须先选择一个子 Skill，并以其原始 SKILL.md 为执行依据。",
+      "许可证仅允许个人非商业使用；商业、公司或客户用途需要 Zeejay0 事先书面许可。"
+    ],
+    "workflow": [
+      "读取用户照片、希望保留的关系和表达目标",
+      "在实景拼贴、影像蒸馏与莫兰迪电影海报中选择一个子 Skill",
+      "按所选子 Skill 的正式入口完成场景分析与构图",
+      "生成图像并按所选入口的输出规则交付"
+    ],
+    "useCases": [
+      "保留真实照片的纸感实景拼贴",
+      "不保留原照片的原创影像蒸馏",
+      "以字体和层级驱动的莫兰迪电影海报"
+    ],
+    "example": "使用拾景 Zine · 影像创作集合分析这张照片：如果需要保留真实现场就选择实景拼贴，如果要重新表达情绪就选择影像蒸馏，如果重点是电影标题与版式就选择莫兰迪电影海报。",
+    "tags": [
+      "摄影再创作",
+      "纸感拼贴",
+      "影像蒸馏",
+      "电影海报",
+      "Zine"
+    ],
+    "model": [],
+    "includedSkills": [
+      "实景拼贴 · Gathered Scenes Zine v1.3",
+      "影像蒸馏 · Scene Distillation Zine v1.3",
+      "莫兰迪电影海报 · Zeejay"
+    ],
+    "version": "未统一声明",
+    "author": "Zeejay0",
+    "created": "2026-08-20",
+    "updated": "2026-09-02",
+    "license": "Gathered Scenes Zine Personal Non-Commercial License 1.0",
+    "licenseNote": "仅限个人非商业使用；商业、公司或客户用途需另行授权。",
+    "icon": "image",
+    "sourceLabel": "matutu-ai/https-github.com-Zeejay0-gathered-scenes-zine-skill",
+    "sourceUrl": "https://github.com/matutu-ai/https-github.com-Zeejay0-gathered-scenes-zine-skill",
+    "entryUrl": "https://github.com/matutu-ai/https-github.com-Zeejay0-gathered-scenes-zine-skill/blob/main/README.md",
+    "fileName": "skills/gathered-scenes-zine-skill/SKILL.md",
+    "url": "skills/gathered-scenes-zine-skill/"
+  }
+]

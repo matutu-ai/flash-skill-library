@@ -1,0 +1,15 @@
+62102461bdfbe2fa97e4ecde1782f77f852ddfb98658d4f6f9f92e442b7c6752  ./final/app.js
+1a26ca1031812d2a004332acbdeec789509f6b154786b5ef592301f9c7a2e7a8  ./final/assets/favicon.svg
+62241974c3c2a03a64d3840199e5abcc3958e0163742b4e465637f06cb4e359a  ./final/catalog.js
+2e2845c16720934ff1075f7c018c5d7848296a8b41aad4e07cce803c681268c0  ./final/index.html
+4f39db5066fb603e97972c6007cab2892dce0474051be283fb6f88343870a920  ./final/skills/agent-work-log/SKILL.md
+dcd0ab104dc7791d4e46ec3a941b804146ecc2b5c9d89ee05e7d2df1b7741950  ./final/skills/ai-promotion-summary/SKILL.md
+bc2edc57e9c612b71e696ed9c34d0a45224e4c145c595e23a5287dca80a6dcee  ./final/skills/geo-keyword-persona/SKILL.md
+984740ce04a3931a0080dd94c6ecd4134f5bf348aa1b03d3132b45845666d8a4  ./final/skills/jewelry-luxury-brand-kit/SKILL.md
+22bd0f6125ed1206f1f20e43f053f7a98abe3c6aa4764141b3fee1be81277116  ./final/skills/oil-motion/SKILL.md
+dcea70d42054c85a331b9be13c37fe2ca303306c0ad4233a0fb52c575184ff0c  ./final/skills/seedance-prompt-description/SKILL.md
+8ad227bfe2fe6ca4b980ac2a94dbc8b1241901a1d4c81c325c01fe803a0a6e2b  ./final/skills/seedance-prompt-engineer/SKILL.md
+da7f6170d0b6424ecd92b4e93478cc1de80e102ef3a07b27b8fbc1cb4778ffe7  ./final/style.css
+e4786d374c04725fd1461b1e9b78e91427bbefc81edc020eb2a25987df46519a  ./preview-desktop.png
+1af48c34348a1c2463dcb81d797ba861717d7815ad80c41022e283f72fb978ed  ./preview-library.png
+dacfb852cba71fad8d49bb92736addb2749d2417fa093761a25f29d84714b609  ./preview-mobile.png

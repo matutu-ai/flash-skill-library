@@ -1,0 +1,48 @@
+id: seedance-prompt-description
+name: Seedance 2.5 提示词描述
+subtitle: 锁定人物，也锁定镜头节奏
+description: "用固定中文结构整理素材、人物、摄影、时间轴与声音，适合需要角色连续性和明确结束状态的视频项目。"
+category: AI Video
+category_label: AI视频
+legacy_category: 视频创作
+legacy_category_key: video
+tags:
+  - Seedance 2.5
+  - 即梦
+  - AI 视频
+  - 角色一致性
+  - 时间轴
+model:
+  - Seedance 2.5
+  - 即梦
+version: v1.0.0
+author: matutu-ai
+prompt: prompt.md
+workflow:
+  - 按平台 token 标明每项素材的用途、范围和禁止迁移内容
+  - 锁定人物外观不变量、允许变化和禁止变化
+  - 统一摄影风格并把动作、镜头与声音组织为扁平时间轴
+  - 写明声音、片段结束状态和任务相关禁止项
+  - 使用配套校验器检查时长、素材编号与冲突规则
+use_cases:
+  - 编写带人物锁定和摄影风格的 Seedance 2.5 提示词
+  - 规划具有连续结束状态的多段人物视频
+  - 制作 DV、16mm、外语旁白或无 BGM 的结构化短片提示词
+github: https://github.com/matutu-ai/seedance2.5-skill
+created: "2026-09-08"
+updated: "2026-09-09"
+input: 主题与时长、画幅、人物和场景参考、摄影风格，以及旁白或声音要求。
+output:
+  - 结构化视频提示词
+  - 人物与摄影连续性约束
+  - 时间轴及片段结束状态
+requirements:
+  - 实际视频生成需要 Seedance 2.5 或即梦的相应能力。
+  - 提示词校验依赖 seedance-prompt-engineer 的配套脚本与规格参考。
+  - 下载提供 SKILL.md 单文件预览；完整示例还需要配套 references。
+example: 使用 Seedance 2.5 提示词描述，写一条 15 秒、9:16 的咖啡馆人物短片提示词，锁定人物服装，采用 DV 质感，无 BGM。
+icon: film
+source_label: matutu-ai/seedance2.5-skill
+github_relation: related_repository
+source_file: SKILL.md
+file_name: skills/seedance-prompt-description/SKILL.md

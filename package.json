@@ -1,0 +1,14 @@
+{
+  "name": "flash-skill-archive",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Flash Skill Archive - AI Skill Marketplace",
+  "scripts": {
+    "generate": "node scripts/generate-skills.js",
+    "start": "python3 -m http.server 8000 --directory public"
+  },
+  "dependencies": {
+    "fuse.js": "6.6.2",
+    "yaml": "^2.8.1"
+  }
+}

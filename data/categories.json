@@ -1,0 +1,32 @@
+[
+  {
+    "key": "video",
+    "name": "AI视频",
+    "count": 2
+  },
+  {
+    "key": "image",
+    "name": "AI图片",
+    "count": 2
+  },
+  {
+    "key": "geo",
+    "name": "GEO",
+    "count": 2
+  },
+  {
+    "key": "agent",
+    "name": "Agent",
+    "count": 0
+  },
+  {
+    "key": "automation",
+    "name": "自动化",
+    "count": 2
+  },
+  {
+    "key": "prompt",
+    "name": "Prompt",
+    "count": 0
+  }
+]

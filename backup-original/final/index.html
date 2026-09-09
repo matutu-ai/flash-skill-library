@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f2ea">
+  <meta name="description" content="闪电的技能档案馆。发现视频创作、网页设计、营销增长与效率办公的 AI 技能。">
+  <title>闪电的技能档案馆 · The Skill Archive</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="catalog.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#library">直接浏览 Skill</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="闪电的技能档案馆首页"><span class="brand-mark" aria-hidden="true">S<span>•</span></span><span>技能档案馆<small>THE SKILL ARCHIVE</small></span></a>
+    <nav aria-label="主导航"><a class="nav-link" href="#library">浏览档案 <span data-total>07</span></a><a class="nav-link" href="#guide">使用指南</a><a class="nav-cta" href="#library">打开技能库 <span aria-hidden="true">↗</span></a></nav>
+  </header>
+
+  <main id="top">
+    <section class="story" id="story" aria-label="打开技能档案馆的滚动场景">
+      <div class="story-sticky">
+        <div class="scene-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> 闪电的技能档案馆 <span class="edition">VOL. 01</span></p>
+          <h1>好用的技能，<br>都收在<span class="heading-em">这里<svg viewBox="0 0 200 16" aria-hidden="true"><path d="M3 10Q87-1 197 6M8 15Q98 5 186 11"/></svg></span>。</h1>
+          <p class="hero-description">把重复的工作交给技能，<br>把时间留给更有意思的创意。</p>
+          <div class="hero-actions"><a class="button button-dark" href="#story-end">和闪电一起开馆 <span aria-hidden="true">↓</span></a><a class="text-link" href="#library">直接浏览 Skill <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-meta"><span><b data-total>07</b> 份实用技能</span><span><b>04</b> 个创作方向</span><span>慢慢发现，马上用上</span></div>
+        </div>
+
+        <div class="archive-scene" aria-label="档案抽屉与技能分类的交互预览">
+          <div class="scene-stamp"><span>PERSONAL COLLECTION</span><strong>好技能 · 已归档</strong><span>CURATED WITH CARE</span></div>
+          <div class="cabinet-shadow"></div>
+          <div class="cabinet">
+            <div class="cabinet-top"></div><div class="cabinet-side"></div>
+            <div class="cabinet-body">
+              <div class="cabinet-heading"><span>THE SKILL ARCHIVE</span><b>NO. 001</b></div>
+              <div class="empty-slot"></div>
+              <div class="drawer"><div class="drawer-interior"></div>
+                <div class="folders">
+                  <div class="folder folder-back"><span class="folder-tab">04 / 效率办公</span><div class="folder-ruled"><b>更少重复，更有条理。</b></div></div>
+                  <div class="folder folder-middle"><span class="folder-tab">03 / 营销增长</span><div class="folder-ruled"><b>让好内容，被看见。</b></div></div>
+                  <div class="folder folder-front"><span class="folder-tab">02 / 视频创作</span><div class="folder-ruled"><b>从一句想法，到一段故事。</b></div></div>
+                  <div class="feature-file"><div class="file-overline"><span>01 / 网页设计</span><span>✳</span></div><strong>Oil Motion</strong><p>把滚动，变成一段故事。</p><div class="file-rule"></div><span class="file-bottom">INTERACTION & MOTION <span>↗</span></span></div>
+                </div>
+                <div class="drawer-front"><div class="drawer-label"><span>精选技能</span><small>OPEN TO DISCOVER</small></div><div class="drawer-handle"></div><span class="drawer-number">01 — 07</span></div>
+              </div>
+              <div class="lower-drawer"><span class="metal-label">灵感 & 方法</span><span class="small-handle"></span></div>
+              <div class="cabinet-feet"><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="archivist-card"><span class="archivist-symbol" aria-hidden="true">✳</span><span><small>YOUR ARCHIVIST</small><strong>闪电 · 档案管理员</strong></span><span class="preview-label">交互预览</span></div>
+          <span class="scene-caption">每一份技能，都值得认真收藏。</span>
+        </div>
+
+        <div class="story-ending" inert><p class="eyebrow">YOUR NEXT IDEA STARTS HERE</p><h2>抽屉打开了。<br>灵感，也有了。</h2><p>挑一份技能，开始下一件好作品。</p></div>
+        <div class="story-bottom"><span class="scroll-hint"><span class="mouse" aria-hidden="true"></span> 向下滚动，打开档案</span><div class="chapter-progress"><span id="chapter-label">01 / 等待开启</span><span class="progress-track"><i></i></span><span id="progress-value">00%</span></div><span class="bottom-note">GOOD THINGS, WELL FILED.</span></div>
+      </div>
+      <span id="story-end" class="story-end" aria-hidden="true"></span>
+    </section>
+
+    <section class="library page-width" id="library" aria-labelledby="library-title">
+      <div class="section-kicker"><span>THE COLLECTION</span><span>精选 · 持续整理</span></div>
+      <div class="library-heading"><div><h2 id="library-title">你的下一份好技能。</h2><p>按你想做的事，找到合适的那一份。</p></div><span class="collection-count"><b data-total>07</b> SKILLS IN THE DRAWER</span></div>
+      <div class="library-tools"><div class="filters" role="group" aria-label="按用途筛选技能"><button data-category="all" aria-pressed="true">全部档案 <span data-total>07</span></button><button data-category="web" aria-pressed="false">网页设计</button><button data-category="video" aria-pressed="false">视频创作</button><button data-category="marketing" aria-pressed="false">营销增长</button><button data-category="office" aria-pressed="false">效率办公</button></div><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="skill-search" type="search" placeholder="搜索名称、用途或成果…" aria-label="搜索技能"><span aria-hidden="true">⌕</span></label></div>
+      <p class="result-summary" id="result-summary" aria-live="polite"></p>
+      <div class="skill-grid" id="skill-grid"></div>
+      <div class="empty-state" id="empty-state" hidden><span>⌕</span><h3>这个抽屉里，还没找到。</h3><p>换个关键词，或看看全部档案。</p><button class="button button-dark" id="reset-search">查看全部技能</button></div>
+      <noscript><p>开启 JavaScript 后可以使用搜索与交互。也可以直接阅读 <a href="skills/oil-motion/SKILL.md">Oil Motion 技能说明</a>。</p></noscript>
+    </section>
+
+    <section class="guide-wrap" id="guide" aria-labelledby="guide-title"><div class="page-width guide"><div class="guide-intro"><p class="eyebrow">A LITTLE HELP TO GET STARTED</p><h2 id="guide-title">拿出一份，<br>开始用吧。</h2><p>Skill 是交给 AI 的一套工作方法。<br>先看懂用途，再带着你的资料开始。</p></div><ol class="guide-steps"><li><span>01</span><div><h3>找到适合的技能</h3><p>查看用途、需要准备的资料和交付内容。</p></div></li><li><span>02</span><div><h3>阅读技能说明</h3><p>确认适用工具和前置条件，准备完整技能包。</p></div></li><li><span>03</span><div><h3>带着真实任务开始</h3><p>参考调用示例，替换成自己的目标与素材。</p></div></li></ol></div></section>
+  </main>
+  <footer class="page-width footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">S<span>•</span></span><span>技能档案馆<small>GOOD THINGS, WELL FILED.</small></span></a><p>慢慢发现，认真创作。</p><a href="#top">回到开馆时刻 ↑</a></footer>
+
+  <dialog id="skill-dialog" aria-labelledby="detail-title"><button class="dialog-close" aria-label="关闭技能详情">×</button><div id="detail-content"></div><div class="toast" id="toast" role="status" hidden></div></dialog>
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+  "desktop": {
+    "title": "Flash Skill Archive · AI Skill 全球知识库",
+    "cards": 8,
+    "githubLinks": [
+      "https://github.com/oil-oil/oil-motion",
+      "https://github.com/matutu-ai/seedance2.5-skill",
+      "https://github.com/matutu-ai/TikTok-Shop-Seedance-2.5-skill",
+      "https://github.com/matutu-ai/GEO",
+      "https://github.com/matutu-ai/GEO-BD",
+      "https://github.com/matutu-ai/danyuange",
+      "https://github.com/matutu-ai/https-github.com-2998980-hue-surreal-pop-collage",
+      "https://github.com/matutu-ai/https-github.com-Zeejay0-gathered-scenes-zine-skill"
+    ],
+    "categories": {
+      "all": "08",
+      "video": "02",
+      "image": "02",
+      "geo": "02",
+      "agent": "00",
+      "automation": "02",
+      "prompt": "00"
+    },
+    "folderLayers": 6,
+    "fuseLoaded": true,
+    "overflow": false,
+    "columns": 3,
+    "uniqueGithubLinks": 8
+  },
+  "searches": {
+    "Seedance": [
+      "seedance2-5-skill",
+      "tiktok-shop-seedance-2-5-skill"
+    ],
+    "GEO": [
+      "geo",
+      "geo-bd",
+      "danyuange"
+    ],
+    "Zine": [
+      "gathered-scenes-zine-skill"
+    ],
+    "UGC": [
+      "tiktok-shop-seedance-2-5-skill"
+    ],
+    "Seednce": [
+      "seedance2-5-skill",
+      "tiktok-shop-seedance-2-5-skill"
+    ],
+    "Agent": [],
+    "Midjourney": []
+  },
+  "combinedVideoUgc": {
+    "ids": [
+      "tiktok-shop-seedance-2-5-skill"
+    ],
+    "summary": "“UGC”在AI视频分类中找到 1 个公开技能仓库",
+    "empty": false
+  },
+  "combinedImageZine": {
+    "ids": [
+      "gathered-scenes-zine-skill"
+    ],
+    "summary": "“Zine”在AI图片分类中找到 1 个公开技能仓库",
+    "empty": false
+  },
+  "agentEmpty": {
+    "ids": [],
+    "summary": "Agent分类收录 0 个公开技能仓库",
+    "empty": true
+  },
+  "copyMatchesPrompt": true,
+  "detail": {
+    "open": true,
+    "title": "Oil Motion",
+    "prompt": "使用 oil-motion，为公开 Skill 集合网站设计档案抽屉随滚动打开的动效，停止滚动时定格，向上滚动时退回。",
+    "github": "https://github.com/oil-oil/oil-motion",
+    "promptMatches": true
+  },
+  "motion": [
+    {
+      "fraction": 0,
+      "progress": 0,
+      "label": "01 / 等待开启",
+      "scrollY": 0
+    },
+    {
+      "fraction": 0.5,
+      "progress": 0.5,
+      "label": "03 / 分类展开",
+      "scrollY": 846
+    },
+    {
+      "fraction": 0.9,
+      "progress": 0.9001182033096927,
+      "label": "05 / 灵感归位",
+      "scrollY": 1523
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "overflow": false,
+    "columns": 1,
+    "navCta": "none",
+    "cards": 8,
+    "heroDescription": "Discover AI Skills, Prompts, Agents, Workflows"
+  },
+  "reducedMotion": {
+    "storyPosition": "relative",
+    "storyHeight": "752px",
+    "progress": 0,
+    "endingDisplay": "none"
+  },
+  "consoleErrors": []
+}

@@ -1,0 +1,115 @@
+{
+  "phase": 9,
+  "date": "2026-09-09",
+  "status": "passed",
+  "wranglerVersion": "4.130.0",
+  "config": {
+    "name": "flash-skill-archive",
+    "pages_build_output_dir": "./public",
+    "compatibility_date": "2026-09-09"
+  },
+  "urlResolutionOrder": [
+    "SITE_URL",
+    "CF_PAGES_URL",
+    "https://matutu-ai.github.io/flash-skill-library/"
+  ],
+  "checks": {
+    "wranglerReadConfig": true,
+    "pagesLocalRuntime": true,
+    "cloudflarePagesUrlGeneration": true,
+    "customSiteUrlPrecedence": true,
+    "defaultSiteUrlRestored": true,
+    "generatedFilesChecked": 23,
+    "deterministicRegeneration": true,
+    "uniqueGitHubRepositories": 8,
+    "publicFiles": 28,
+    "runtimeRoutes": [
+      {
+        "route": "/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11820
+      },
+      {
+        "route": "/sitemap.xml",
+        "status": 200,
+        "contentType": "application/xml",
+        "bytes": 1212
+      },
+      {
+        "route": "/robots.txt",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8",
+        "bytes": 93
+      },
+      {
+        "route": "/assets/app.js",
+        "status": 200,
+        "contentType": "application/javascript",
+        "bytes": 13619
+      },
+      {
+        "route": "/skills/oil-motion/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11514
+      },
+      {
+        "route": "/skills/seedance2-5-skill/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11918
+      },
+      {
+        "route": "/skills/tiktok-shop-seedance-2-5-skill/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 12334
+      },
+      {
+        "route": "/skills/geo/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11568
+      },
+      {
+        "route": "/skills/geo-bd/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11761
+      },
+      {
+        "route": "/skills/danyuange/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11711
+      },
+      {
+        "route": "/skills/surreal-pop-collage/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11880
+      },
+      {
+        "route": "/skills/gathered-scenes-zine-skill/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 12225
+      }
+    ],
+    "runtimeHttp200": 12,
+    "forbiddenPublicEntries": {
+      "agent-work-log": 0,
+      "macos-obsidian": 0
+    },
+    "originalHashesPassed": "15/15",
+    "backupHashesPassed": "15/15"
+  },
+  "platformCapabilities": {
+    "cdn": "Provided automatically by Cloudflare Pages after deployment",
+    "https": "Provided automatically for pages.dev and attached custom domains",
+    "customDomain": "Attach in Cloudflare Pages, then set SITE_URL to the public canonical origin"
+  },
+  "cloudDeploymentExecuted": false,
+  "cloudDeploymentNote": "No Cloudflare account, API token, Pages project, or custom domain is configured in this local workspace."
+}

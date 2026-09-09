@@ -1,0 +1,99 @@
+{
+  "phase": 8,
+  "date": "2026-09-09",
+  "status": "passed",
+  "workflow": ".github/workflows/deploy.yml",
+  "workflowSha256": "a740e60c5ba46de00ab82e11ca2ce20577d96ec16317ca44933842ef170db16b",
+  "triggerBranches": [
+    "main"
+  ],
+  "manualTrigger": true,
+  "jobs": [
+    "build",
+    "deploy"
+  ],
+  "productionSiteUrlSource": "steps.pages.outputs.base_url",
+  "artifactPath": "public",
+  "actionTags": {
+    "actions/checkout@v4": "11d5960a326750d5838078e36cf38b85af677262",
+    "actions/setup-node@v4": "49933ea5288caeca8642d1e84afbd3f7d6820020",
+    "actions/configure-pages@v5": "983d7736d9b0ae728b81ab479565c72886d7745b",
+    "actions/upload-pages-artifact@v4": "7b1f4a764d45c48632c6b24a0339c27f5614fb0b",
+    "actions/deploy-pages@v4": "d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e"
+  },
+  "checks": {
+    "workflowYamlParses": true,
+    "workflowStructure": true,
+    "officialActionTagsExist": true,
+    "npmCi": true,
+    "npmAuditVulnerabilities": 0,
+    "generation": true,
+    "generatedRepositories": 8,
+    "generatedRepositoriesUnique": true,
+    "artifactFileCount": 28,
+    "artifactBytes": 831999,
+    "artifactSymlinks": 0,
+    "htmlPages": 9,
+    "localReferencesChecked": 70,
+    "missingLocalReferences": [],
+    "httpRoutes": [
+      {
+        "url": "http://127.0.0.1:8000/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/danyuange/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/gathered-scenes-zine-skill/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/geo/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/geo-bd/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/oil-motion/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/seedance2-5-skill/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/surreal-pop-collage/",
+        "status": 200,
+        "contentType": "text/html"
+      },
+      {
+        "url": "http://127.0.0.1:8000/skills/tiktok-shop-seedance-2-5-skill/",
+        "status": 200,
+        "contentType": "text/html"
+      }
+    ],
+    "forbiddenPublicEntries": {
+      "agent-work-log": 0,
+      "macos-obsidian": 0
+    },
+    "originalAndBackupIntegrity": "15/15 each",
+    "officialActionInterfaces": {
+      "configure-pages@v5": "base_url",
+      "upload-pages-artifact@v4": "path",
+      "deploy-pages@v4": "page_url"
+    }
+  },
+  "hostedWorkflowExecuted": false,
+  "hostedWorkflowNote": "This local project has no .git repository or GitHub remote, so the hosted Actions run starts after the project is pushed to GitHub and Pages is configured to use GitHub Actions."
+}

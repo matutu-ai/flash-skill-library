@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Flash Skill Archive API response",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name",
+      "category",
+      "tags",
+      "prompt",
+      "workflow",
+      "embedding",
+      "downloads",
+      "stars",
+      "version",
+      "created_time"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "category": {
+        "type": "string",
+        "minLength": 1
+      },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "prompt": {
+        "type": "string",
+        "minLength": 1
+      },
+      "workflow": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "minItems": 1
+      },
+      "embedding": {
+        "oneOf": [
+          { "type": "null" },
+          {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 1
+          }
+        ]
+      },
+      "downloads": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "stars": {
+        "type": ["integer", "null"],
+        "minimum": 0
+      },
+      "version": {
+        "type": "string",
+        "minLength": 1
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+id: oil-motion
+order: 1
+catalog_status: active
+name: Oil Motion
+subtitle: 把滚动，变成一段故事
+description: "将滚动、拖拽等交互意图转换为动效方案、动画素材与网页运行时，明确画面如何推进、停住和退回。"
+category: Automation
+category_label: 网页设计
+category_key: web
+legacy_category: 网页设计
+legacy_category_key: web
+tags:
+  - 网页动效
+  - 滚动交互
+  - 动画时间轴
+  - Motion Design
+model:
+  - minimax/minimax-h3-max
+version: v1.0.0
+author: oil-oil
+prompt: prompt.md
+workflow:
+  - 锁定主体、视觉、交互、连续性、画幅和目标设备
+  - 建立关键帧、片段、播放策略与质量目标
+  - 先制作并验收首组关键帧、首段视频和真实页面挂载
+  - 根据背景与时间控制选择媒体格式和运行时控制器
+  - 逐段生成、验收、编译时间轴并接入网页运行时
+  - 在目标尺寸、DPR、反向操作、移动端和降级条件下验收
+use_cases:
+  - 设计由滚动推进并可反向退回的网页叙事
+  - 制作由指针、拖拽、触摸或设备方向驱动的产品动效
+  - 将角色、材质、遮挡等语义变化转换为可运行的动画素材
+included_skills:
+  - oil-motion
+github: https://github.com/oil-oil/oil-motion
+created: "2026-09-08"
+updated: "2026-09-09"
+input: 页面用途、主体与风格、交互方式、目标设备，以及已有图片或视频。
+output:
+  - 视觉与交互方案
+  - 关键帧及动画生产计划
+  - 素材时间轴与网页运行时
+requirements:
+  - 生成与处理素材需要 Python 3、Pillow、ffmpeg 和 ffprobe。
+  - 视频生成需要配置相应模型服务。
+  - 下载提供 SKILL.md 单文件预览；完整流程还需要配套 scripts、references 和 assets。
+example: 使用 oil-motion，为公开 Skill 集合网站设计档案抽屉随滚动打开的动效，停止滚动时定格，向上滚动时退回。
+icon: spark
+source_label: oil-oil/oil-motion
+github_relation: upstream_source
+source_file: SKILL.md
+file_name: skills/oil-motion/SKILL.md
+entry_url: https://github.com/oil-oil/oil-motion/blob/main/SKILL.md
+entry_type: single_skill
+license: MIT
+license_note: 按仓库 LICENSE 条款使用。
+visibility: public
+publisher: oil-oil

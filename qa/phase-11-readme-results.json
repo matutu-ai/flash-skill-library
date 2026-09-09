@@ -1,0 +1,62 @@
+{
+  "phase": 11,
+  "date": "2026-09-09",
+  "status": "passed",
+  "readme": {
+    "path": "README.md",
+    "sha256": "671fce601ab0015601276f272e384e958462331b38541dc9590aa5783c024ebd",
+    "lines": 368,
+    "bytes": 10272,
+    "sections": [
+      "功能",
+      "项目结构",
+      "本地运行",
+      "添加一个 Skill",
+      "自动生成内容",
+      "站点地址与 SEO",
+      "GitHub Pages 部署",
+      "Cloudflare Pages 部署",
+      "数据格式",
+      "内容与许可证",
+      "验收记录"
+    ]
+  },
+  "documented": {
+    "projectIntroduction": true,
+    "projectStructure": true,
+    "skillAddition": true,
+    "localRun": true,
+    "githubPagesDeployment": true,
+    "cloudflarePagesDeployment": true,
+    "dataFormats": true,
+    "skillsApi": true,
+    "seoSiteUrl": true,
+    "licenses": true,
+    "backupAndQa": true
+  },
+  "checks": {
+    "stalePhase4StatusRemoved": true,
+    "codeFencesBalanced": true,
+    "yamlExampleParses": true,
+    "yamlRequiredFields": 30,
+    "categories": 6,
+    "apiFields": 11,
+    "documentedPathsChecked": 9,
+    "npmCi": true,
+    "npmAuditVulnerabilities": 0,
+    "generation": true,
+    "generatedRepositories": 8,
+    "generatedRepositoriesUnique": 8,
+    "staticHttpRoutes200": 10,
+    "githubWorkflowMatchesReadme": true,
+    "wranglerCreateCommandExists": true,
+    "generatedFilesChecked": 24,
+    "deterministicRegeneration": true,
+    "forbiddenPublicEntries": {
+      "agent-work-log": 0,
+      "macos-obsidian": 0
+    },
+    "originalHashesPassed": "15/15",
+    "backupHashesPassed": "15/15"
+  }
+}

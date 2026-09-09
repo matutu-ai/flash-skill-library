@@ -1,0 +1,48 @@
+id: seedance-prompt-engineer
+name: Seedance 提示词工程师
+subtitle: 把创意，写成可拍的分镜
+description: "根据模型版本、素材和叙事目标选择生成或编辑模式，输出中文视频提示词、分镜与素材映射。"
+category: AI Video
+category_label: AI视频
+legacy_category: 视频创作
+legacy_category_key: video
+tags:
+  - Seedance
+  - 即梦
+  - AI 视频
+  - 视频提示词
+  - 分镜
+model:
+  - Seedance 2.0
+  - Seedance 2.5
+version: v1.0.0
+author: matutu-ai
+prompt: prompt.md
+workflow:
+  - 确认 Seedance 版本并选择生成、延长、编辑或分镜模式
+  - 为每个图片、视频和音频素材标明主用途与作用范围
+  - 选择对应的 prompt contract 并填写动作、镜头、声音和连续性
+  - 输出制作方案、素材映射、导演说明和可复制提示词
+  - 校验素材编号、时间轴、连续性、声音与平台限制
+use_cases:
+  - 将文字、图片、脚本或分镜转换为 Seedance 视频提示词
+  - 设计短片、电商广告、MV、产品视频和教育视频
+  - 规划长视频、视频延长、智能编辑和多宫格分镜
+github: https://github.com/matutu-ai/seedance2.5-skill
+created: "2026-09-08"
+updated: "2026-09-09"
+input: 视频主题、Seedance 版本、目标时长与画幅，以及图片、视频、音频等参考素材。
+output:
+  - 视频制作方案
+  - 素材用途与作用范围
+  - 可复制的中文提示词或编辑指令
+requirements:
+  - 实际生成视频需要使用即梦或 Seedance 平台。
+  - 本地提示词校验需要 Python 和配套校验脚本。
+  - 下载提供 SKILL.md 单文件预览；完整流程还需要配套 references 和 scripts。
+example: 使用 Seedance 提示词工程师，为一杯冰咖啡设计 15 秒、9:16 的产品短视频，给出素材映射、分镜和可复制的中文提示词。
+icon: film
+source_label: matutu-ai/seedance2.5-skill
+github_relation: related_repository
+source_file: SKILL.md
+file_name: skills/seedance-prompt-engineer/SKILL.md

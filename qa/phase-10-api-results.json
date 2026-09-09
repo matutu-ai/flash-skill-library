@@ -1,0 +1,78 @@
+{
+  "phase": 10,
+  "date": "2026-09-09",
+  "status": "passed",
+  "endpoint": {
+    "method": "GET",
+    "path": "/api/skills",
+    "staticSnapshot": "/api/skills.json",
+    "responseType": "array",
+    "records": 8
+  },
+  "fields": [
+    "id",
+    "name",
+    "category",
+    "tags",
+    "prompt",
+    "workflow",
+    "embedding",
+    "downloads",
+    "stars",
+    "version",
+    "created_time"
+  ],
+  "reservedDefaults": {
+    "embedding": null,
+    "downloads": 0,
+    "stars": null
+  },
+  "runtime": {
+    "wranglerVersion": "4.130.0",
+    "get": {
+      "path": "/api/skills",
+      "status": 200,
+      "contentType": "application/json",
+      "records": 8,
+      "matchesStaticSnapshot": true
+    },
+    "staticGet": {
+      "path": "/api/skills.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    "post": {
+      "path": "/api/skills",
+      "status": 405,
+      "allow": "GET"
+    }
+  },
+  "checks": {
+    "generatorSyntax": true,
+    "functionSyntax": true,
+    "generation": true,
+    "jsonSchemaDraft": "2020-12",
+    "schemaValidation": true,
+    "dateTimeValidation": true,
+    "fieldSetExact": true,
+    "sourceMappingsPassed": true,
+    "uniqueIds": 8,
+    "uniqueGitHubRepositories": 8,
+    "generatedFilesChecked": 24,
+    "deterministicRegeneration": true,
+    "publicFiles": 29,
+    "forbiddenPublicEntries": {
+      "agent-work-log": 0,
+      "macos-obsidian": 0
+    },
+    "originalHashesPassed": "15/15",
+    "backupHashesPassed": "15/15",
+    "wranglerSiteRoutesHttp200": 9
+  },
+  "futureStorage": {
+    "supabase": "Compatible through PostgreSQL columns and pgvector",
+    "postgresql": "Field mapping documented in app/api/README.md",
+    "vectorDatabase": "embedding accepts null or a numeric vector"
+  },
+  "databaseConnected": false
+}

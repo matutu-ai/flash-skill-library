@@ -1,0 +1,933 @@
+{
+  "phase": 12,
+  "date": "2026-09-09",
+  "status": "passed",
+  "project": "Flash Skill Archive - AI Skill Marketplace",
+  "checklist": [
+    {
+      "item": "原 HTML 内容完整迁移",
+      "status": "passed",
+      "evidence": "final/ 与 backup-original/ 15/15 哈希通过；6 个退出前台的旧 Skill 保存在 archive/，代理商工作日报按用户指令仅下架未删除"
+    },
+    {
+      "item": "Skill 标准化",
+      "status": "passed",
+      "evidence": "8 个活动仓库均有完整 YAML、README、prompt.md、SKILL.md；1 个无真实来源的 Midjourney 目录保持预留且不发布"
+    },
+    {
+      "item": "自动索引",
+      "status": "passed",
+      "evidence": "npm run generate 生成 8 个唯一仓库条目，24 个生成文件连续两次 SHA-256 一致"
+    },
+    {
+      "item": "搜索功能",
+      "status": "passed",
+      "evidence": "Fuse.js 已加载；UGC 精确搜索、Sedance 模糊搜索、Zine 分类组合和无结果状态均通过"
+    },
+    {
+      "item": "分类系统",
+      "status": "passed",
+      "evidence": "6 个固定分类；AI视频 2、AI图片 2、GEO 2、Agent 0、自动化 2、Prompt 0"
+    },
+    {
+      "item": "Skill 详情页",
+      "status": "passed",
+      "evidence": "8 个唯一详情页，桌面与移动端均通过"
+    },
+    {
+      "item": "Prompt 复制",
+      "status": "passed",
+      "evidence": "卡片、快速详情弹窗、完整详情页共 3 个实际复制检查通过"
+    },
+    {
+      "item": "SEO 支持",
+      "status": "passed",
+      "evidence": "9 个唯一 Title、Description、Canonical；首页 CollectionPage，详情页 CreativeWork + SoftwareApplication"
+    },
+    {
+      "item": "Sitemap 与 Robots",
+      "status": "passed",
+      "evidence": "Sitemap 9 个无重复绝对 URL，Robots 正确指向 Sitemap"
+    },
+    {
+      "item": "GitHub Actions",
+      "status": "passed",
+      "evidence": "main 推送与手动触发、最小权限、构建和部署任务、public Artifact 均已验证"
+    },
+    {
+      "item": "Cloudflare Pages",
+      "status": "passed",
+      "evidence": "Wrangler 4.130.0 配置与本地 Pages 运行时通过，支持 CF_PAGES_URL、CDN、HTTPS 与自定义 SITE_URL"
+    },
+    {
+      "item": "README",
+      "status": "passed",
+      "evidence": "368 行完整文档，覆盖结构、添加 Skill、本地运行、双平台部署和数据格式"
+    }
+  ],
+  "summary": {
+    "activeSkills": 8,
+    "uniqueGitHubRepositories": 8,
+    "categories": 6,
+    "detailPages": 8,
+    "indexedPages": 9,
+    "apiRecords": 8,
+    "publicFiles": 29,
+    "generatedFiles": 24,
+    "desktopPagesChecked": 9,
+    "mobilePagesChecked": 9,
+    "consoleErrors": 0,
+    "horizontalOverflowPages": 0,
+    "npmAuditVulnerabilities": 0,
+    "originalHashesPassed": "15/15",
+    "backupHashesPassed": "15/15",
+    "archivedLegacySkills": 6,
+    "forbiddenPublicEntries": {
+      "agent-work-log": 0,
+      "macos-obsidian": 0
+    }
+  },
+  "generation": {
+    "command": "npm run generate",
+    "deterministic": true,
+    "files": 24
+  },
+  "data": {
+    "yamlDirectories": 9,
+    "activeSkills": 8,
+    "reservedSkills": 1,
+    "uniqueIds": 8,
+    "uniqueRepositories": 8,
+    "sourceFilesPerActiveSkill": 4,
+    "promptMappings": 8,
+    "publicSkillCopies": 8,
+    "detailPages": 8,
+    "apiRecords": 8,
+    "categories": 6,
+    "categoryCounts": {
+      "video": 2,
+      "image": 2,
+      "geo": 2,
+      "agent": 0,
+      "automation": 2,
+      "prompt": 0
+    },
+    "archivedLegacySkills": 6,
+    "forbiddenPublicEntries": {
+      "agent-work-log": 0,
+      "macos-obsidian": 0
+    },
+    "githubWorkflow": true,
+    "cloudflareConfig": true,
+    "readmeRequiredSections": 6
+  },
+  "seo": {
+    "pages": 9,
+    "uniqueTitles": 9,
+    "uniqueDescriptions": 9,
+    "uniqueCanonicals": 9,
+    "jsonLdPages": 9,
+    "detailSchemas": 8,
+    "homepageItemList": 8,
+    "sitemapUrls": 9,
+    "robots": true,
+    "localReferencesChecked": 70,
+    "missingLocalReferences": 0,
+    "pagesDetail": [
+      {
+        "file": "public/index.html",
+        "title": "Flash Skill Archive | AI Skill Marketplace",
+        "description": "Flash Skill Archive 是 GitHub 驱动的 AI Skill 全球知识库，收录公开 AI Skills、Prompts、Agents 与 Workflows。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/",
+        "schemaTypes": [
+          "CollectionPage",
+          "ItemList"
+        ]
+      },
+      {
+        "file": "public/skills/danyuange/index.html",
+        "title": "国际版 GEO · 九大单元 AI Skill | Flash Skill Archive",
+        "description": "国际版 GEO · 九大单元 AI 工作流和提示词库：一套资料，两份一致的九大单元工作簿。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/danyuange/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/gathered-scenes-zine-skill/index.html",
+        "title": "拾景 Zine · 影像创作集合 AI Skill | Flash Skill Archive",
+        "description": "拾景 Zine · 影像创作集合 AI 工作流和提示词库：把普通画面，重新装订成一页。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/gathered-scenes-zine-skill/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/geo/index.html",
+        "title": "GEO V3 · 企业增长闭环 AI Skill | Flash Skill Archive",
+        "description": "GEO V3 · 企业增长闭环 AI 工作流和提示词库：从企业资料到验证闭环。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/geo/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/geo-bd/index.html",
+        "title": "GEO-BD · 企业 GEO 诊断 AI Skill | Flash Skill Archive",
+        "description": "GEO-BD · 企业 GEO 诊断 AI 工作流和提示词库：看清 AI 知道什么，也看清下一步。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/geo-bd/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/oil-motion/index.html",
+        "title": "Oil Motion AI Skill | Flash Skill Archive",
+        "description": "Oil Motion AI 工作流和提示词库：把滚动，变成一段故事。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/oil-motion/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/seedance2-5-skill/index.html",
+        "title": "Seedance 2.5 · 商业视频导演 AI Skill | Flash Skill Archive",
+        "description": "Seedance 2.5 · 商业视频导演 AI 工作流和提示词库：把创意编译成可拍的 Seedance 提示词。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/seedance2-5-skill/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/surreal-pop-collage/index.html",
+        "title": "超现实波普拼贴 AI Skill | Flash Skill Archive",
+        "description": "超现实波普拼贴 AI 工作流和提示词库：黑白现实里，只留一处不对劲。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/surreal-pop-collage/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      },
+      {
+        "file": "public/skills/tiktok-shop-seedance-2-5-skill/index.html",
+        "title": "TikTok Shop · 海外电商视频 AI Skill | Flash Skill Archive",
+        "description": "TikTok Shop · 海外电商视频 AI 工作流和提示词库：从市场信号到电商视频成片方案。查看 Prompt、Workflow、使用方法与 GitHub 仓库。",
+        "canonical": "https://matutu-ai.github.io/flash-skill-library/skills/tiktok-shop-seedance-2-5-skill/",
+        "schemaTypes": [
+          "CreativeWork",
+          "SoftwareApplication"
+        ]
+      }
+    ],
+    "sitemap": [
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/oil-motion/",
+        "lastmod": "2026-09-09"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/seedance2-5-skill/",
+        "lastmod": "2026-09-07"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/tiktok-shop-seedance-2-5-skill/",
+        "lastmod": "2026-09-06"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/geo/",
+        "lastmod": "2026-09-07"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/geo-bd/",
+        "lastmod": "2026-09-08"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/danyuange/",
+        "lastmod": "2026-09-03"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/surreal-pop-collage/",
+        "lastmod": "2026-08-20"
+      },
+      {
+        "loc": "https://matutu-ai.github.io/flash-skill-library/skills/gathered-scenes-zine-skill/",
+        "lastmod": "2026-09-02"
+      }
+    ]
+  },
+  "browser": {
+    "desktopPages": [
+      {
+        "url": "http://127.0.0.1:8792/?phase12-final=1",
+        "title": "Flash Skill Archive | AI Skill Marketplace",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/oil-motion/",
+        "title": "Oil Motion AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/seedance2-5-skill/",
+        "title": "Seedance 2.5 · 商业视频导演 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/tiktok-shop-seedance-2-5-skill/",
+        "title": "TikTok Shop · 海外电商视频 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/geo/",
+        "title": "GEO V3 · 企业增长闭环 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/geo-bd/",
+        "title": "GEO-BD · 企业 GEO 诊断 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/danyuange/",
+        "title": "国际版 GEO · 九大单元 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/surreal-pop-collage/",
+        "title": "超现实波普拼贴 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/gathered-scenes-zine-skill/",
+        "title": "拾景 Zine · 影像创作集合 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      }
+    ],
+    "mobilePages": [
+      {
+        "url": "http://127.0.0.1:8792/?phase12-mobile=1",
+        "title": "Flash Skill Archive | AI Skill Marketplace",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/oil-motion/",
+        "title": "Oil Motion AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/seedance2-5-skill/",
+        "title": "Seedance 2.5 · 商业视频导演 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/tiktok-shop-seedance-2-5-skill/",
+        "title": "TikTok Shop · 海外电商视频 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/geo/",
+        "title": "GEO V3 · 企业增长闭环 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/geo-bd/",
+        "title": "GEO-BD · 企业 GEO 诊断 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/danyuange/",
+        "title": "国际版 GEO · 九大单元 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/surreal-pop-collage/",
+        "title": "超现实波普拼贴 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      },
+      {
+        "url": "http://127.0.0.1:8792/skills/gathered-scenes-zine-skill/",
+        "title": "拾景 Zine · 影像创作集合 AI Skill | Flash Skill Archive",
+        "canonicalCount": 1,
+        "jsonLdCount": 1,
+        "jsonLdErrors": 0,
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": false,
+        "consoleErrors": []
+      }
+    ],
+    "interactions": {
+      "initialCatalog": {
+        "cards": [
+          "oil-motion",
+          "seedance2-5-skill",
+          "tiktok-shop-seedance-2-5-skill",
+          "geo",
+          "geo-bd",
+          "danyuange",
+          "surreal-pop-collage",
+          "gathered-scenes-zine-skill"
+        ],
+        "github": [
+          "https://github.com/oil-oil/oil-motion",
+          "https://github.com/matutu-ai/seedance2.5-skill",
+          "https://github.com/matutu-ai/TikTok-Shop-Seedance-2.5-skill",
+          "https://github.com/matutu-ai/GEO",
+          "https://github.com/matutu-ai/GEO-BD",
+          "https://github.com/matutu-ai/danyuange",
+          "https://github.com/matutu-ai/https-github.com-2998980-hue-surreal-pop-collage",
+          "https://github.com/matutu-ai/https-github.com-Zeejay0-gathered-scenes-zine-skill"
+        ],
+        "details": [
+          "skills/oil-motion/",
+          "skills/seedance2-5-skill/",
+          "skills/tiktok-shop-seedance-2-5-skill/",
+          "skills/geo/",
+          "skills/geo-bd/",
+          "skills/danyuange/",
+          "skills/surreal-pop-collage/",
+          "skills/gathered-scenes-zine-skill/"
+        ],
+        "counts": {
+          "all": "08",
+          "video": "02",
+          "image": "02",
+          "geo": "02",
+          "agent": "00",
+          "automation": "02",
+          "prompt": "00"
+        },
+        "fuse": "function",
+        "totals": [
+          "08",
+          "08",
+          "08"
+        ]
+      },
+      "searchAndCategories": {
+        "exact": [
+          "tiktok-shop-seedance-2-5-skill"
+        ],
+        "fuzzy": [
+          "seedance2-5-skill",
+          "tiktok-shop-seedance-2-5-skill"
+        ],
+        "combined": [
+          "gathered-scenes-zine-skill"
+        ],
+        "none": [],
+        "emptyVisible": true,
+        "reset": {
+          "cards": 8,
+          "value": "",
+          "allPressed": "true"
+        },
+        "emptyCategory": {
+          "cards": 0,
+          "visible": true
+        }
+      },
+      "promptCopyAndDialog": {
+        "card": {
+          "matches": true,
+          "label": "已复制 ✓"
+        },
+        "dialog": {
+          "open": true,
+          "title": "Oil Motion",
+          "copyMatches": true,
+          "toast": "Prompt 已复制"
+        },
+        "closed": true
+      },
+      "scrollForwardReverse": {
+        "start": {
+          "y": 0,
+          "p": 0
+        },
+        "target": 934.6,
+        "forward": {
+          "y": 935,
+          "p": 61,
+          "chapter": "04 / 进入档案"
+        },
+        "reverse": {
+          "y": 0,
+          "p": 0
+        }
+      },
+      "detailPromptCopy": {
+        "matches": true,
+        "label": "已复制 ✓",
+        "toast": "Prompt 已复制"
+      },
+      "mobileHomepage": {
+        "cards": 8,
+        "filters": 7,
+        "viewport": 390,
+        "columns": "346px"
+      }
+    },
+    "consoleErrors": [],
+    "screenshots": [
+      "qa/phase-12-home-desktop.png",
+      "qa/phase-12-library-desktop.png",
+      "qa/phase-12-home-mobile.png",
+      "qa/phase-12-detail-mobile.png"
+    ]
+  },
+  "http": {
+    "publicFiles": 29,
+    "publicFilesReachable": 29,
+    "direct200": 20,
+    "canonicalRedirects": 9,
+    "cleanPageRoutes": 9,
+    "cleanPageHttp200": 9,
+    "apiGet": {
+      "status": 200,
+      "contentType": "application/json",
+      "records": 8,
+      "bytes": 8274
+    },
+    "apiPost": {
+      "status": 405,
+      "allow": "GET"
+    },
+    "fileResults": [
+      {
+        "route": "/api/skills.json",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 8274
+      },
+      {
+        "route": "/assets/app.js",
+        "status": 200,
+        "contentType": "application/javascript",
+        "bytes": 13619
+      },
+      {
+        "route": "/assets/catalog.js",
+        "status": 200,
+        "contentType": "application/javascript",
+        "bytes": 22578
+      },
+      {
+        "route": "/assets/detail.js",
+        "status": 200,
+        "contentType": "application/javascript",
+        "bytes": 1493
+      },
+      {
+        "route": "/assets/favicon.svg",
+        "status": 200,
+        "contentType": "image/svg+xml",
+        "bytes": 272
+      },
+      {
+        "route": "/assets/fuse.min.js",
+        "status": 200,
+        "contentType": "application/javascript",
+        "bytes": 23539
+      },
+      {
+        "route": "/assets/previews/preview-desktop.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 358419
+      },
+      {
+        "route": "/assets/previews/preview-library.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 96583
+      },
+      {
+        "route": "/assets/previews/preview-mobile.png",
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 104945
+      },
+      {
+        "route": "/assets/style.css",
+        "status": 200,
+        "contentType": "text/css; charset=utf-8",
+        "bytes": 36232
+      },
+      {
+        "route": "/index.html",
+        "status": 308,
+        "location": "/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11820
+      },
+      {
+        "route": "/robots.txt",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8",
+        "bytes": 93
+      },
+      {
+        "route": "/sitemap.xml",
+        "status": 200,
+        "contentType": "application/xml",
+        "bytes": 1212
+      },
+      {
+        "route": "/skills/danyuange/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 7907
+      },
+      {
+        "route": "/skills/danyuange/index.html",
+        "status": 308,
+        "location": "/skills/danyuange/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11711
+      },
+      {
+        "route": "/skills/gathered-scenes-zine-skill/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 1817
+      },
+      {
+        "route": "/skills/gathered-scenes-zine-skill/index.html",
+        "status": 308,
+        "location": "/skills/gathered-scenes-zine-skill/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 12225
+      },
+      {
+        "route": "/skills/geo/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 10325
+      },
+      {
+        "route": "/skills/geo/index.html",
+        "status": 308,
+        "location": "/skills/geo/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11568
+      },
+      {
+        "route": "/skills/geo-bd/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 12036
+      },
+      {
+        "route": "/skills/geo-bd/index.html",
+        "status": 308,
+        "location": "/skills/geo-bd/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11761
+      },
+      {
+        "route": "/skills/oil-motion/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 9958
+      },
+      {
+        "route": "/skills/oil-motion/index.html",
+        "status": 308,
+        "location": "/skills/oil-motion/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11514
+      },
+      {
+        "route": "/skills/seedance2-5-skill/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 6491
+      },
+      {
+        "route": "/skills/seedance2-5-skill/index.html",
+        "status": 308,
+        "location": "/skills/seedance2-5-skill/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11918
+      },
+      {
+        "route": "/skills/surreal-pop-collage/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 6028
+      },
+      {
+        "route": "/skills/surreal-pop-collage/index.html",
+        "status": 308,
+        "location": "/skills/surreal-pop-collage/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 11880
+      },
+      {
+        "route": "/skills/tiktok-shop-seedance-2-5-skill/SKILL.md",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8",
+        "bytes": 11721
+      },
+      {
+        "route": "/skills/tiktok-shop-seedance-2-5-skill/index.html",
+        "status": 308,
+        "location": "/skills/tiktok-shop-seedance-2-5-skill/",
+        "finalStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 12334
+      }
+    ],
+    "cleanResults": [
+      {
+        "route": "/",
+        "status": 200
+      },
+      {
+        "route": "/skills/oil-motion/",
+        "status": 200
+      },
+      {
+        "route": "/skills/seedance2-5-skill/",
+        "status": 200
+      },
+      {
+        "route": "/skills/tiktok-shop-seedance-2-5-skill/",
+        "status": 200
+      },
+      {
+        "route": "/skills/geo/",
+        "status": 200
+      },
+      {
+        "route": "/skills/geo-bd/",
+        "status": 200
+      },
+      {
+        "route": "/skills/danyuange/",
+        "status": 200
+      },
+      {
+        "route": "/skills/surreal-pop-collage/",
+        "status": 200
+      },
+      {
+        "route": "/skills/gathered-scenes-zine-skill/",
+        "status": 200
+      }
+    ]
+  },
+  "screenshots": {
+    "qa/phase-12-home-desktop.png": {
+      "width": 1440,
+      "height": 900,
+      "bytes": 336477,
+      "sha256": "e6e918fa8f4943ff7986a0238821f8bbabd187935e74b068f584dd66ba2821ca"
+    },
+    "qa/phase-12-library-desktop.png": {
+      "width": 1440,
+      "height": 900,
+      "bytes": 106399,
+      "sha256": "4b929b9466c9f964f9811708f13823e9f00dc057c5f020334bc167da8f54af3a"
+    },
+    "qa/phase-12-home-mobile.png": {
+      "width": 390,
+      "height": 844,
+      "bytes": 122851,
+      "sha256": "372bc875f7c6dc93ea346fd33ee30d1a44053dd1d50fd806ff8be61d4576cb41"
+    },
+    "qa/phase-12-detail-mobile.png": {
+      "width": 390,
+      "height": 844,
+      "bytes": 53214,
+      "sha256": "a163428a6b763ec5d06ca95889a9034cb40946ae209ea5baf3b294ff85bcb112"
+    }
+  },
+  "api": {
+    "wranglerVersion": "4.130.0",
+    "get": {
+      "path": "/api/skills",
+      "status": 200,
+      "contentType": "application/json",
+      "records": 8,
+      "matchesStaticSnapshot": true
+    },
+    "staticGet": {
+      "path": "/api/skills.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    "post": {
+      "path": "/api/skills",
+      "status": 405,
+      "allow": "GET"
+    }
+  },
+  "deployment": {
+    "githubActions": {
+      "validated": true,
+      "actionTags": {
+        "actions/checkout@v4": "11d5960a326750d5838078e36cf38b85af677262",
+        "actions/setup-node@v4": "49933ea5288caeca8642d1e84afbd3f7d6820020",
+        "actions/configure-pages@v5": "983d7736d9b0ae728b81ab479565c72886d7745b",
+        "actions/upload-pages-artifact@v4": "7b1f4a764d45c48632c6b24a0339c27f5614fb0b",
+        "actions/deploy-pages@v4": "d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e"
+      },
+      "hostedRunExecuted": false
+    },
+    "cloudflarePages": {
+      "validated": true,
+      "wranglerVersion": "4.130.0",
+      "cloudDeploymentExecuted": false
+    }
+  },
+  "documentation": {
+    "path": "README.md",
+    "sha256": "671fce601ab0015601276f272e384e958462331b38541dc9590aa5783c024ebd",
+    "lines": 368,
+    "bytes": 10272,
+    "sections": [
+      "功能",
+      "项目结构",
+      "本地运行",
+      "添加一个 Skill",
+      "自动生成内容",
+      "站点地址与 SEO",
+      "GitHub Pages 部署",
+      "Cloudflare Pages 部署",
+      "数据格式",
+      "内容与许可证",
+      "验收记录"
+    ]
+  },
+  "externalChecks": {
+    "githubRepositoryUrls": 8,
+    "currentLiveRecheck": "inconclusive: all GitHub requests timed out in the current network environment",
+    "previousVerifiedResult": "Phase 4 verified 8/8 repositories with git ls-remote",
+    "urlFormatAndRepositoryDeduplication": "passed"
+  },
+  "externalPrerequisites": [
+    "Push this directory into a GitHub repository and enable GitHub Actions as the Pages source to execute the hosted deployment.",
+    "Create or connect a Cloudflare Pages project to execute cloud deployment; attach a custom domain and set SITE_URL for its canonical origin."
+  ]
+}

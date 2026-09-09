@@ -1,0 +1,201 @@
+[
+  {
+    "id": "oil-motion",
+    "name": "Oil Motion",
+    "category": "自动化",
+    "tags": [
+      "网页动效",
+      "滚动交互",
+      "动画时间轴",
+      "Motion Design"
+    ],
+    "prompt": "使用 oil-motion，为公开 Skill 集合网站设计档案抽屉随滚动打开的动效，停止滚动时定格，向上滚动时退回。",
+    "workflow": [
+      "锁定主体、视觉、交互、连续性、画幅和目标设备",
+      "建立关键帧、片段、播放策略与质量目标",
+      "先制作并验收首组关键帧、首段视频和真实页面挂载",
+      "根据背景与时间控制选择媒体格式和运行时控制器",
+      "逐段生成、验收、编译时间轴并接入网页运行时",
+      "在目标尺寸、DPR、反向操作、移动端和降级条件下验收"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "v1.0.0",
+    "created_time": "2026-09-08T00:00:00.000Z"
+  },
+  {
+    "id": "seedance2-5-skill",
+    "name": "Seedance 2.5 · 商业视频导演",
+    "category": "AI视频",
+    "tags": [
+      "Seedance 2.5",
+      "商业视频",
+      "分镜",
+      "人物真实感",
+      "提示词编译"
+    ],
+    "prompt": "使用 seedance-2-5-prompt，把我提供的产品、人物、场景素材和广告 Brief 编排为可直接投喂 Seedance 2.5 的提示词。锁定产品与人物身份，按素材职责设计时间轴、镜头与声音，并完成 Human Realism、连续性、Prompt Readiness 和生成前风险检查。",
+    "workflow": [
+      "识别并规范产品、人物、场景、参考素材与广告目标",
+      "分析主体并建立产品锁与人物身份锁",
+      "设计创意结构、Hook、分镜、镜头语言与声音",
+      "编译 Seedance 2.5 可执行提示词",
+      "检查人物真实感、连续性、可拍性与生成前风险"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "未声明",
+    "created_time": "2026-08-19T00:00:00.000Z"
+  },
+  {
+    "id": "tiktok-shop-seedance-2-5-skill",
+    "name": "TikTok Shop · 海外电商视频",
+    "category": "AI视频",
+    "tags": [
+      "TikTok Shop",
+      "UGC",
+      "海外电商",
+      "趋势研究",
+      "Seedance 2.5"
+    ],
+    "prompt": "使用 overseas-ecommerce-seedance，为我提供的产品制作面向目标国家与平台的海外电商短视频方案。请完成产品和受众分析、市场本地化、UGC 脚本、分镜、摄影、声音与 Seedance 2.5 提示词，并做一致性 QA；涉及近期趋势时只使用有日期和来源的真实数据。",
+    "workflow": [
+      "根据产品、链接、参考视频或趋势请求自动选择工作流",
+      "分析产品、受众与目标市场本地化",
+      "研究趋势或拆解爆款机制，区分实时数据与静态 Pattern",
+      "生成 UGC 脚本、分镜、摄影、声音与 Seedance 2.5 提示词",
+      "完成产品、人物、商业和 Seedance 一致性检查"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "1.0.0",
+    "created_time": "2026-08-26T00:00:00.000Z"
+  },
+  {
+    "id": "geo",
+    "name": "GEO V3 · 企业增长闭环",
+    "category": "GEO",
+    "tags": [
+      "GEO",
+      "关键词策略",
+      "企业画像",
+      "内容规划",
+      "证据管理"
+    ],
+    "prompt": "使用 geo-keyword-profile-template 分析我提供的企业资料。先说明 GEO V3 框架、已有事实与资料缺口，再按正式流程生成简约版关键词和九大画像；不要虚构企业、案例、资质、数据或验证结果。",
+    "workflow": [
+      "清洗企业资料并区分事实、证据与缺失项",
+      "建立企业 GEO Profile、行业研究与竞争研究",
+      "生成搜索意图、关键词矩阵、九大画像与垂直画像",
+      "规划内容矩阵与动态发布策略",
+      "执行 GEO 验证、缺口分析、内容补强与再次验证"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "3.0.6",
+    "created_time": "2026-08-24T00:00:00.000Z"
+  },
+  {
+    "id": "geo-bd",
+    "name": "GEO-BD · 企业 GEO 诊断",
+    "category": "GEO",
+    "tags": [
+      "GEO 诊断",
+      "AI 认知",
+      "竞品分析",
+      "证据图谱",
+      "复测报告"
+    ],
+    "prompt": "使用 geo-diagnostic-engine，根据我提供的企业事实、证据、真实 AI 观察和已确认竞品生成 Executive GEO 诊断。所有分数都要可追溯；缺失数据保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA，并给出机会排序、P0 至 P3 行动计划和复测方法。",
+    "workflow": [
+      "读取客户资料并确认已有与缺失内容",
+      "建立企业实体、Evidence Graph 与 AI 认知记录",
+      "生成 Query Matrix 并分析竞品差距、EEAAP 与 EEAT",
+      "计算 GEO Gap、Opportunity Score 与分级行动计划",
+      "生成分层报告、验证计划与 Before/After 复测"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "V3",
+    "created_time": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "danyuange",
+    "name": "国际版 GEO · 九大单元",
+    "category": "自动化",
+    "tags": [
+      "GEO",
+      "九大单元",
+      "双语交付",
+      "Excel",
+      "制造商与服务商"
+    ],
+    "prompt": "使用 danyuange，读取我提供的客户资料。先根据真实填写字段判断客户是制造商还是服务商，再严格使用对应官方模板输出英文原版、纯中文分析版两份九大单元工作簿，并单独输出补充资料清单。不要使用模板示例补全客户事实。",
+    "workflow": [
+      "依据客户真实填写字段判定制造商或服务商",
+      "选择对应官方模板并清空示例数据",
+      "把客户内容映射到官方字段",
+      "导出结构一致的英文原版与纯中文分析版工作簿",
+      "单独整理缺失资料清单并完成交付自查"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "未声明",
+    "created_time": "2026-08-26T00:00:00.000Z"
+  },
+  {
+    "id": "surreal-pop-collage",
+    "name": "超现实波普拼贴",
+    "category": "AI图片",
+    "tags": [
+      "照片改造",
+      "波普拼贴",
+      "超现实",
+      "平涂色块",
+      "海报"
+    ],
+    "prompt": "使用 surreal-pop-collage，把我提供的照片改造成竖版 3:4 超现实波普拼贴。保留主体为清晰可识别的黑白现实锚，从原图推导两至三个平涂色形，并且全图只使用一个有场景来源的不可能巨物；生成后简短说明色彩和巨物的来源。",
+    "workflow": [
+      "读取照片并提取锚点主体、区域边界、原生色、动势与场景典故",
+      "从原图推导两至三个平涂色形",
+      "选择唯一一个源自场景的不可能巨物",
+      "编译四段式图像提示词并生成作品",
+      "按识别度、单一巨物、来源、平涂与明亮度完成质量检查"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "未声明",
+    "created_time": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "id": "gathered-scenes-zine-skill",
+    "name": "拾景 Zine · 影像创作集合",
+    "category": "AI图片",
+    "tags": [
+      "摄影再创作",
+      "纸感拼贴",
+      "影像蒸馏",
+      "电影海报",
+      "Zine"
+    ],
+    "prompt": "使用 gathered-scenes-zine-skill 集合索引分析我提供的照片与创作目标，只选择一个最合适的子 Skill：保留真实现场时选 scenes-gathered-zine-v1-3，不保留照片、重新表达情绪时选 scene-distillation-zine-v1-3，需要电影标题与版式时选 morandi-cinematic-poster-zeejay。选择后严格按对应原始 SKILL.md 执行。",
+    "workflow": [
+      "读取用户照片、希望保留的关系和表达目标",
+      "在实景拼贴、影像蒸馏与莫兰迪电影海报中选择一个子 Skill",
+      "按所选子 Skill 的正式入口完成场景分析与构图",
+      "生成图像并按所选入口的输出规则交付"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "未统一声明",
+    "created_time": "2026-08-20T00:00:00.000Z"
+  }
+]
