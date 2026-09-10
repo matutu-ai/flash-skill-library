@@ -8,7 +8,7 @@
     "build": "npm run build:hero",
     "build:hero": "tsc --noEmit && vite build",
     "preview": "npm run generate && python3 -m http.server 8000 --directory public",
-    "generate": "node scripts/generate-skills.js && npm run build:hero",
+    "generate": "SITE_URL=https://matutuai.cn node scripts/generate-skills.js && npm run build:hero",
     "start": "python3 -m http.server 8000 --directory public"
   },
   "dependencies": {
