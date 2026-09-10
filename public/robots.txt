@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://matutu-ai.github.io/flash-skill-library/sitemap.xml
+Sitemap: https://matutuai.cn/sitemap.xml
