@@ -23,6 +23,8 @@
 
   const story = $('#story');
   const root = document.documentElement;
+  const siteHeader = $('.site-header');
+  const lithosHero = $('#lithos-hero-root');
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const chapters = ['01 / 等待开启', '02 / 拉开抽屉', '03 / 分类展开', '04 / 进入档案', '05 / 灵感归位'];
   let animationFrame = 0;
@@ -49,8 +51,12 @@
   function scheduleStory() {
     if (!animationFrame && !document.hidden) animationFrame = requestAnimationFrame(renderStory);
   }
-  window.addEventListener('scroll', scheduleStory, {passive:true});
-  window.addEventListener('resize', () => { lastProgress = -1; scheduleStory(); }, {passive:true});
+  function renderHeaderTone() {
+    const heroBottom = lithosHero.getBoundingClientRect().bottom;
+    siteHeader.classList.toggle('on-dark', heroBottom > siteHeader.offsetHeight * .65);
+  }
+  window.addEventListener('scroll', () => { scheduleStory(); renderHeaderTone(); }, {passive:true});
+  window.addEventListener('resize', () => { lastProgress = -1; scheduleStory(); renderHeaderTone(); }, {passive:true});
   motionQuery.addEventListener('change', () => { lastProgress = -1; scheduleStory(); });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && animationFrame) { cancelAnimationFrame(animationFrame); animationFrame = 0; }
@@ -60,6 +66,7 @@
   $('.hero-actions .button').addEventListener('click', event => {
     if (motionQuery.matches) { event.preventDefault(); $('#library').scrollIntoView({behavior:'instant'}); }
   });
+  renderHeaderTone();
   renderStory();
 
   let category = 'all';

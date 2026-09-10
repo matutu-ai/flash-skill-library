@@ -4,11 +4,28 @@
   "private": true,
   "description": "Flash Skill Archive - AI Skill Marketplace",
   "scripts": {
-    "generate": "node scripts/generate-skills.js",
+    "dev": "vite",
+    "build": "npm run build:hero",
+    "build:hero": "tsc --noEmit && vite build",
+    "preview": "npm run generate && python3 -m http.server 8000 --directory public",
+    "generate": "node scripts/generate-skills.js && npm run build:hero",
     "start": "python3 -m http.server 8000 --directory public"
   },
   "dependencies": {
     "fuse.js": "6.6.2",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.5"
   }
 }
