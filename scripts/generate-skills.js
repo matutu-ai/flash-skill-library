@@ -48,6 +48,7 @@ const requiredFields = [
   'input',
   'output',
   'requirements',
+  'platform_usage',
   'example',
   'icon',
   'source_label',
@@ -273,6 +274,16 @@ function renderList(items, className = '') {
   return `<ul${classAttribute}>${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
+function renderPlatformUsage(guides) {
+  return guides.map(guide => `
+          <article class="skill-detail-platform-card">
+            <p class="skill-detail-platform-name">${escapeHtml(guide.name)}</p>
+            <p class="skill-detail-platform-summary">${escapeHtml(guide.summary)}</p>
+            <ol class="skill-detail-platform-steps">${guide.steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
+            ${guide.notes?.length ? `<ul class="skill-detail-platform-notes">${guide.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul>` : ''}
+          </article>`).join('');
+}
+
 function renderDetailPage(skill) {
   const model = skill.model.length ? skill.model.join(' · ') : '通用';
   const canonicalUrl = publicUrl(skill.url);
@@ -371,13 +382,19 @@ function renderDetailPage(skill) {
           <ol class="skill-detail-use-steps">${useSteps}</ol>
         </section>
 
+        <section class="skill-detail-section" id="platform-usage">
+          <p class="skill-detail-section-label">05 / PLATFORM USE</p>
+          <h2>豆包、千问怎么使用</h2>
+          <div class="skill-detail-platform-grid">${renderPlatformUsage(skill.platformUsage)}</div>
+        </section>
+
         <section class="skill-detail-section skill-detail-two-column" id="delivery">
-          <div><p class="skill-detail-section-label">05 / OUTPUT</p><h2>你会得到</h2>${renderList(skill.output, 'skill-detail-list')}</div>
-          <div><p class="skill-detail-section-label">06 / REQUIREMENTS</p><h2>使用前确认</h2>${renderList(skill.requirements, 'skill-detail-list')}</div>
+          <div><p class="skill-detail-section-label">06 / OUTPUT</p><h2>你会得到</h2>${renderList(skill.output, 'skill-detail-list')}</div>
+          <div><p class="skill-detail-section-label">07 / REQUIREMENTS</p><h2>使用前确认</h2>${renderList(skill.requirements, 'skill-detail-list')}</div>
         </section>
 
         <section class="skill-detail-section" id="updates">
-          <p class="skill-detail-section-label">07 / UPDATE LOG</p>
+          <p class="skill-detail-section-label">08 / UPDATE LOG</p>
           <h2>更新记录</h2>
           <div class="skill-detail-update"><span>${escapeHtml(skill.updated)}</span><div><strong>${escapeHtml(skill.version)}</strong><p>当前公开仓库版本；本档案首次记录于 ${escapeHtml(skill.created)}。</p></div></div>
         </section>
@@ -390,6 +407,7 @@ function renderDetailPage(skill) {
           <a href="#prompt">Prompt</a>
           <a href="#workflow">Workflow</a>
           <a href="#usage">使用方法</a>
+          <a href="#platform-usage">平台使用</a>
           <a href="#delivery">输出与要求</a>
           <a href="#updates">更新记录</a>
         </nav>
@@ -447,6 +465,23 @@ function readActiveSkills() {
     if (!data.tags.length || !data.workflow.length || !data.use_cases.length || !data.included_skills.length) {
       fail(`${entry.name}: tags、workflow、use_cases 和 included_skills 不得为空`);
     }
+    if (!Array.isArray(data.platform_usage) || !data.platform_usage.length) {
+      fail(`${entry.name}: platform_usage 必须是非空数组`);
+    }
+    data.platform_usage.forEach((guide, index) => {
+      if (!guide || typeof guide.name !== 'string' || !guide.name.trim()) {
+        fail(`${entry.name}: platform_usage[${index}].name 必须是非空字符串`);
+      }
+      if (typeof guide.summary !== 'string' || !guide.summary.trim()) {
+        fail(`${entry.name}: platform_usage[${index}].summary 必须是非空字符串`);
+      }
+      if (!Array.isArray(guide.steps) || !guide.steps.length || guide.steps.some(step => typeof step !== 'string' || !step.trim())) {
+        fail(`${entry.name}: platform_usage[${index}].steps 必须是非空字符串数组`);
+      }
+      if (guide.notes !== undefined && (!Array.isArray(guide.notes) || guide.notes.some(note => typeof note !== 'string' || !note.trim()))) {
+        fail(`${entry.name}: platform_usage[${index}].notes 必须是字符串数组`);
+      }
+    });
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(data.id)) fail(`${entry.name}: id 格式无效`);
     if (data.id !== entry.name) fail(`${entry.name}: 目录名必须与 id 一致`);
     if (seenIds.has(data.id)) fail(`${entry.name}: id 重复`);
@@ -482,6 +517,7 @@ function readActiveSkills() {
       input: data.input,
       output: data.output,
       requirements: data.requirements,
+      platformUsage: data.platform_usage,
       workflow: data.workflow,
       useCases: data.use_cases,
       example: data.example,

@@ -42,6 +42,16 @@ requirements:
   - "需要配套的制造商或服务商官方 xlsx 模板及 references 文件。"
   - "所有内容必须来自客户真实填写资料，缺失字段保持空白并列入独立清单。"
   - "执行环境需要能够读取和写入 xlsx 文件。"
+platform_usage:
+  - name: "豆包 / 通义千问 / 其他平台"
+    summary: "把正式入口、官方模板、references 和客户资料一起提供给具备 xlsx 读写能力的平台。"
+    steps:
+      - "上传本 SKILL.md、制造商和服务商两个官方模板 xlsx、references 文件夹，再上传客户的国际版 GEO 下单表或已填写的制造/服务九大单元表。"
+      - "对 AI 说：请按九大单元 skill 执行：先判定制造还是服务，再严格导出英文原版和纯中文分析版两份九大单元，缺失资料单独列清单。"
+      - "下载 AI 输出的两份 xlsx，按正式入口的自查项核验后再交付。"
+    notes:
+      - "如果平台不能上传整个文件夹，就逐个上传 references 中的三个 md、assets 中的两个模板 xlsx 和客户下单表。"
+      - "导出前必须读取 field-mapping 与 format-constraints，不能按平台自己的理解改写字段。"
 example: "使用国际版 GEO · 九大单元，先判断这份客户资料属于制造商还是服务商，再按官方模板输出英文原版、纯中文分析版和独立补充资料清单。"
 icon: "file"
 source_label: "matutu-ai/danyuange"

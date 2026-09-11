@@ -170,6 +170,15 @@ output:
 requirements:
   - 使用前需要满足的条件。
 
+platform_usage:
+  - name: 豆包 / 通义千问
+    summary: 根据正式 Skill 入口提供资料并执行工作流。
+    steps:
+      - 上传或粘贴正式 Skill 入口和任务资料。
+      - 按页面给出的执行口令运行。
+    notes:
+      - 以正式 Skill 入口中的平台限制为准。
+
 example: 一个简短、具体的使用示例。
 icon: spark
 source_label: example-author/example-skill

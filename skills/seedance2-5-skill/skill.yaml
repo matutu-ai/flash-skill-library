@@ -43,6 +43,16 @@ requirements:
   - "实际视频生成需要 Seedance 2.5、即梦或豆包的相应能力。"
   - "完整流程需要源仓库中的 QUICK-START、workflow、template、schema 与 Human Realism 资源。"
   - "本 Skill 不承担海外市场研究、TikTok 趋势研究或广告投放策略。"
+platform_usage:
+  - name: "豆包 / 即梦（具备 Seedance 2.5 能力时）"
+    summary: "接收本 Skill 编译后的可执行视频提示词，实际生成依赖平台提供相应模型能力。"
+    steps:
+      - "先提供产品、人物或场景图片、产品资料、参考视频、广告 Brief 或已有提示词。"
+      - "按正式入口选择 ONE-SHOT PROMPT、SHOT-BY-SHOT PROMPT 或 DIRECTOR PACKAGE，并完成产品锁、人物身份锁、连续性与风险检查。"
+      - "将最终提示词复制到具备 Seedance 2.5 能力的豆包或即梦入口，生成前核对人物、产品、声音、版权和授权条件。"
+    notes:
+      - "本 Skill 负责导演编排与提示词编译，不代替豆包或即梦提交生成任务。"
+      - "完整流程还需要源仓库中的 QUICK-START、workflow、template、schema 与 Human Realism 资源。"
 example: "使用 seedance-2-5-prompt，把这组产品图、人物图和 15 秒广告 Brief 编译为 ONE-SHOT PROMPT，锁定产品与人物，并完成 Human Realism、连续性和风险检查。"
 icon: "film"
 source_label: "matutu-ai/seedance2.5-skill"

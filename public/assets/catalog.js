@@ -18,6 +18,21 @@ window.SKILL_CATALOG = [
       "完整流程需要源仓库中的 QUICK-START、workflow、template、schema 与 Human Realism 资源。",
       "本 Skill 不承担海外市场研究、TikTok 趋势研究或广告投放策略。"
     ],
+    "platformUsage": [
+      {
+        "name": "豆包 / 即梦（具备 Seedance 2.5 能力时）",
+        "summary": "接收本 Skill 编译后的可执行视频提示词，实际生成依赖平台提供相应模型能力。",
+        "steps": [
+          "先提供产品、人物或场景图片、产品资料、参考视频、广告 Brief 或已有提示词。",
+          "按正式入口选择 ONE-SHOT PROMPT、SHOT-BY-SHOT PROMPT 或 DIRECTOR PACKAGE，并完成产品锁、人物身份锁、连续性与风险检查。",
+          "将最终提示词复制到具备 Seedance 2.5 能力的豆包或即梦入口，生成前核对人物、产品、声音、版权和授权条件。"
+        ],
+        "notes": [
+          "本 Skill 负责导演编排与提示词编译，不代替豆包或即梦提交生成任务。",
+          "完整流程还需要源仓库中的 QUICK-START、workflow、template、schema 与 Human Realism 资源。"
+        ]
+      }
+    ],
     "workflow": [
       "识别并规范产品、人物、场景、参考素材与广告目标",
       "分析主体并建立产品锁与人物身份锁",
@@ -76,6 +91,22 @@ window.SKILL_CATALOG = [
       "近期趋势判断需要真实实时数据；不可用时必须标记 LIVE DATA UNAVAILABLE。",
       "实际视频生成需要 Seedance 2.5；视频和音频分析可能依赖 ffmpeg、ffprobe、yt-dlp 与转写工具。",
       "真人肖像、竞品素材和受版权保护内容必须具有相应授权。"
+    ],
+    "platformUsage": [
+      {
+        "name": "豆包 / 通义千问（分析与脚本）",
+        "summary": "适合在对话平台完成产品、受众、市场、趋势、脚本和 Seedance 提示词编排。",
+        "steps": [
+          "提供产品图片或链接、TikTok 或 Reels 参考视频、目标国家与平台、时长、卖点等输入。",
+          "让平台按 Router 自动选择 workflow，不要先扫描全部 references、intelligence 或 templates。",
+          "需要实时趋势时要求使用有日期和来源的真实数据；不可用时明确标记 LIVE DATA UNAVAILABLE。",
+          "将最终 Seedance 2.5 提示词复制到具备相应生成能力的入口，再按平台当前界面完成生成。"
+        ],
+        "notes": [
+          "本 Skill 产出策划、脚本、分镜、提示词和质检，不代替用户提交视频生成任务。",
+          "涉及真人、竞品或受版权保护内容时，先确认相应授权；未授权不得登录、抓取、复制或转存。"
+        ]
+      }
     ],
     "workflow": [
       "根据产品、链接、参考视频或趋势请求自动选择工作流",
@@ -136,6 +167,22 @@ window.SKILL_CATALOG = [
       "完整执行需要按 INDEX.md 路由读取仓库中的 schemas、workflows、templates 与 references。",
       "任何客户语料库读取、创建或更新均需遵守正式入口中的确认规则。"
     ],
+    "platformUsage": [
+      {
+        "name": "豆包 / 通义千问 / DeepSeek",
+        "summary": "先完成 GEO V3 框架学习，再按 INDEX.md 路由执行企业资料、关键词和画像任务。",
+        "steps": [
+          "先提供本仓库或正式 SKILL.md，让平台只输出执行架构、输入资料、九大板块、证据等级和验证方式的框架摘要。",
+          "框架摘要完成后，再提供企业介绍、产品或服务资料、案例、图片、docx、xlsx、文本或网页链接。",
+          "执行具体模块前先查 INDEX.md，只读取对应的一个或两个文件；需要客户语料库时先询问是否使用。",
+          "无文件或无 Git 能力的平台使用单文件客户语料库，后续只输出本次变更内容和当前进度与任务队列。"
+        ],
+        "notes": [
+          "不自动下载、读取、创建或更新客户语料库；未确认前不得读取。",
+          "豆包、通义千问、DeepSeek 等平台不执行也不承诺 GitHub 同步。"
+        ]
+      }
+    ],
     "workflow": [
       "清洗企业资料并区分事实、证据与缺失项",
       "建立企业 GEO Profile、行业研究与竞争研究",
@@ -193,6 +240,22 @@ window.SKILL_CATALOG = [
       "竞品与 Evidence 需要来源和状态，缺失数据必须保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA。",
       "运行仓库诊断脚本需要 Python 3；默认可使用 ManualProvider 或 OfflineProvider。"
     ],
+    "platformUsage": [
+      {
+        "name": "豆包 / 通义千问（通用投喂方式）",
+        "summary": "提供正式入口和真实诊断输入后，可按 V3 数据流整理诊断报告；平台本身不替代仓库脚本或真实 API。",
+        "steps": [
+          "提供 geo-account-precheck/SKILL.md，以及企业资料 JSON、真实 AI observations、已确认竞品、Evidence、问题、关键词方向和验证约束。",
+          "要求按 DiagnosticPipeline 输出 Executive、Operational 或 Technical 报告，并同时保留 diagnostic.json 所需的诊断结论。",
+          "缺失资料、未运行的查询或不足以判断的指标保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA，不补写模拟排名。",
+          "如果平台不能运行 Python，将结果作为分析报告使用；需要运行仓库脚本时使用 Python 3，并按 ManualProvider 或 OfflineProvider 规则执行。"
+        ],
+        "notes": [
+          "报告分数是可追溯的 Diagnostic Indicator，不是任何 AI 平台的真实排名保证。",
+          "当前没有接入真实搜索或 AI API 时，不应把离线结果描述为实时平台表现。"
+        ]
+      }
+    ],
     "workflow": [
       "读取客户资料并确认已有与缺失内容",
       "建立企业实体、Evidence Graph 与 AI 认知记录",
@@ -249,6 +312,21 @@ window.SKILL_CATALOG = [
       "需要配套的制造商或服务商官方 xlsx 模板及 references 文件。",
       "所有内容必须来自客户真实填写资料，缺失字段保持空白并列入独立清单。",
       "执行环境需要能够读取和写入 xlsx 文件。"
+    ],
+    "platformUsage": [
+      {
+        "name": "豆包 / 通义千问 / 其他平台",
+        "summary": "把正式入口、官方模板、references 和客户资料一起提供给具备 xlsx 读写能力的平台。",
+        "steps": [
+          "上传本 SKILL.md、制造商和服务商两个官方模板 xlsx、references 文件夹，再上传客户的国际版 GEO 下单表或已填写的制造/服务九大单元表。",
+          "对 AI 说：请按九大单元 skill 执行：先判定制造还是服务，再严格导出英文原版和纯中文分析版两份九大单元，缺失资料单独列清单。",
+          "下载 AI 输出的两份 xlsx，按正式入口的自查项核验后再交付。"
+        ],
+        "notes": [
+          "如果平台不能上传整个文件夹，就逐个上传 references 中的三个 md、assets 中的两个模板 xlsx 和客户下单表。",
+          "导出前必须读取 field-mapping 与 format-constraints，不能按平台自己的理解改写字段。"
+        ]
+      }
     ],
     "workflow": [
       "依据客户真实填写字段判定制造商或服务商",

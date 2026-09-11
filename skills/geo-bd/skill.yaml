@@ -42,6 +42,17 @@ requirements:
   - "完整 AI 表现判断需要真实 observed 或 provided AI 记录；模拟记录不参与评分。"
   - "竞品与 Evidence 需要来源和状态，缺失数据必须保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA。"
   - "运行仓库诊断脚本需要 Python 3；默认可使用 ManualProvider 或 OfflineProvider。"
+platform_usage:
+  - name: "豆包 / 通义千问（通用投喂方式）"
+    summary: "提供正式入口和真实诊断输入后，可按 V3 数据流整理诊断报告；平台本身不替代仓库脚本或真实 API。"
+    steps:
+      - "提供 geo-account-precheck/SKILL.md，以及企业资料 JSON、真实 AI observations、已确认竞品、Evidence、问题、关键词方向和验证约束。"
+      - "要求按 DiagnosticPipeline 输出 Executive、Operational 或 Technical 报告，并同时保留 diagnostic.json 所需的诊断结论。"
+      - "缺失资料、未运行的查询或不足以判断的指标保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA，不补写模拟排名。"
+      - "如果平台不能运行 Python，将结果作为分析报告使用；需要运行仓库脚本时使用 Python 3，并按 ManualProvider 或 OfflineProvider 规则执行。"
+    notes:
+      - "报告分数是可追溯的 Diagnostic Indicator，不是任何 AI 平台的真实排名保证。"
+      - "当前没有接入真实搜索或 AI API 时，不应把离线结果描述为实时平台表现。"
 example: "使用 GEO Diagnostic Engine V3，根据这份企业资料和真实 AI 观察生成 Executive GEO 诊断；缺失数据保持 UNKNOWN，并给出 P0 至 P3 行动与复测计划。"
 icon: "search"
 source_label: "matutu-ai/GEO-BD"

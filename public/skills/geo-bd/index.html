@@ -82,13 +82,25 @@
           <ol class="skill-detail-use-steps"><li><span>01</span><div><strong>准备输入</strong><p>企业资料 JSON，包括公司事实、材料、真实 AI observations、已确认竞品、证据、问题、关键词方向、当前指标与验证约束。</p></div></li><li><span>02</span><div><strong>打开正式入口</strong><p>进入对应 GitHub 仓库，先阅读正式 Skill 入口和仓库内的配套文件。</p></div></li><li><span>03</span><div><strong>复制并填写 Prompt</strong><p>复制本页 Prompt，将其中的目标、资料和限制替换为当前任务的真实信息。</p></div></li><li><span>04</span><div><strong>按 Workflow 执行</strong><p>依次完成各步骤，并根据运行要求检查结果后再交付。</p></div></li></ol>
         </section>
 
+        <section class="skill-detail-section" id="platform-usage">
+          <p class="skill-detail-section-label">05 / PLATFORM USE</p>
+          <h2>豆包、千问怎么使用</h2>
+          <div class="skill-detail-platform-grid">
+          <article class="skill-detail-platform-card">
+            <p class="skill-detail-platform-name">豆包 / 通义千问（通用投喂方式）</p>
+            <p class="skill-detail-platform-summary">提供正式入口和真实诊断输入后，可按 V3 数据流整理诊断报告；平台本身不替代仓库脚本或真实 API。</p>
+            <ol class="skill-detail-platform-steps"><li>提供 geo-account-precheck/SKILL.md，以及企业资料 JSON、真实 AI observations、已确认竞品、Evidence、问题、关键词方向和验证约束。</li><li>要求按 DiagnosticPipeline 输出 Executive、Operational 或 Technical 报告，并同时保留 diagnostic.json 所需的诊断结论。</li><li>缺失资料、未运行的查询或不足以判断的指标保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA，不补写模拟排名。</li><li>如果平台不能运行 Python，将结果作为分析报告使用；需要运行仓库脚本时使用 Python 3，并按 ManualProvider 或 OfflineProvider 规则执行。</li></ol>
+            <ul class="skill-detail-platform-notes"><li>报告分数是可追溯的 Diagnostic Indicator，不是任何 AI 平台的真实排名保证。</li><li>当前没有接入真实搜索或 AI API 时，不应把离线结果描述为实时平台表现。</li></ul>
+          </article></div>
+        </section>
+
         <section class="skill-detail-section skill-detail-two-column" id="delivery">
-          <div><p class="skill-detail-section-label">05 / OUTPUT</p><h2>你会得到</h2><ul class="skill-detail-list"><li>Executive、Operational 或 Technical 分层诊断报告</li><li>diagnostic.json 与可选 report.json</li><li>GEO 缺口、机会排序、行动计划与复测方案</li></ul></div>
-          <div><p class="skill-detail-section-label">06 / REQUIREMENTS</p><h2>使用前确认</h2><ul class="skill-detail-list"><li>完整 AI 表现判断需要真实 observed 或 provided AI 记录；模拟记录不参与评分。</li><li>竞品与 Evidence 需要来源和状态，缺失数据必须保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA。</li><li>运行仓库诊断脚本需要 Python 3；默认可使用 ManualProvider 或 OfflineProvider。</li></ul></div>
+          <div><p class="skill-detail-section-label">06 / OUTPUT</p><h2>你会得到</h2><ul class="skill-detail-list"><li>Executive、Operational 或 Technical 分层诊断报告</li><li>diagnostic.json 与可选 report.json</li><li>GEO 缺口、机会排序、行动计划与复测方案</li></ul></div>
+          <div><p class="skill-detail-section-label">07 / REQUIREMENTS</p><h2>使用前确认</h2><ul class="skill-detail-list"><li>完整 AI 表现判断需要真实 observed 或 provided AI 记录；模拟记录不参与评分。</li><li>竞品与 Evidence 需要来源和状态，缺失数据必须保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA。</li><li>运行仓库诊断脚本需要 Python 3；默认可使用 ManualProvider 或 OfflineProvider。</li></ul></div>
         </section>
 
         <section class="skill-detail-section" id="updates">
-          <p class="skill-detail-section-label">07 / UPDATE LOG</p>
+          <p class="skill-detail-section-label">08 / UPDATE LOG</p>
           <h2>更新记录</h2>
           <div class="skill-detail-update"><span>2026-09-08</span><div><strong>V3</strong><p>当前公开仓库版本；本档案首次记录于 2026-08-27。</p></div></div>
         </section>
@@ -101,6 +113,7 @@
           <a href="#prompt">Prompt</a>
           <a href="#workflow">Workflow</a>
           <a href="#usage">使用方法</a>
+          <a href="#platform-usage">平台使用</a>
           <a href="#delivery">输出与要求</a>
           <a href="#updates">更新记录</a>
         </nav>

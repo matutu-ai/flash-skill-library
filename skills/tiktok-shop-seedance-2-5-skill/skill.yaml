@@ -43,6 +43,17 @@ requirements:
   - "近期趋势判断需要真实实时数据；不可用时必须标记 LIVE DATA UNAVAILABLE。"
   - "实际视频生成需要 Seedance 2.5；视频和音频分析可能依赖 ffmpeg、ffprobe、yt-dlp 与转写工具。"
   - "真人肖像、竞品素材和受版权保护内容必须具有相应授权。"
+platform_usage:
+  - name: "豆包 / 通义千问（分析与脚本）"
+    summary: "适合在对话平台完成产品、受众、市场、趋势、脚本和 Seedance 提示词编排。"
+    steps:
+      - "提供产品图片或链接、TikTok 或 Reels 参考视频、目标国家与平台、时长、卖点等输入。"
+      - "让平台按 Router 自动选择 workflow，不要先扫描全部 references、intelligence 或 templates。"
+      - "需要实时趋势时要求使用有日期和来源的真实数据；不可用时明确标记 LIVE DATA UNAVAILABLE。"
+      - "将最终 Seedance 2.5 提示词复制到具备相应生成能力的入口，再按平台当前界面完成生成。"
+    notes:
+      - "本 Skill 产出策划、脚本、分镜、提示词和质检，不代替用户提交视频生成任务。"
+      - "涉及真人、竞品或受版权保护内容时，先确认相应授权；未授权不得登录、抓取、复制或转存。"
 example: "使用 overseas-ecommerce-seedance，为我提供的产品制作面向美国 TikTok Shop 的 15 秒 UGC 视频方案，输出产品分析、英文口播、分镜和 Seedance 2.5 提示词；没有实时趋势数据时明确标注。"
 icon: "film"
 source_label: "matutu-ai/TikTok-Shop-Seedance-2.5-skill"
