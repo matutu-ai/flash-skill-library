@@ -1,6 +1,6 @@
 id: "ui-skill"
 order: 9
-catalog_status: "active"
+catalog_status: "archived"
 name: "AI Native Dark SaaS UI"
 subtitle: "为 AI 产品建立可信的深色界面系统"
 description: "为 AI SaaS、Agent 平台、开发者工具、开源社区与 Skill 市场设计高级深色界面，明确页面结构、组件职责、设计 tokens、动效和响应式策略。"

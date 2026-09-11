@@ -7,7 +7,7 @@
   {
     "key": "image",
     "name": "AI图片",
-    "count": 2
+    "count": 0
   },
   {
     "key": "geo",
@@ -22,7 +22,7 @@
   {
     "key": "automation",
     "name": "自动化",
-    "count": 3
+    "count": 1
   },
   {
     "key": "prompt",

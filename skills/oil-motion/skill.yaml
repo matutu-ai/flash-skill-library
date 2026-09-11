@@ -1,6 +1,6 @@
 id: oil-motion
 order: 1
-catalog_status: active
+catalog_status: archived
 name: Oil Motion
 subtitle: 把滚动，变成一段故事
 description: "将滚动、拖拽等交互意图转换为动效方案、动画素材与网页运行时，明确画面如何推进、停住和退回。"
