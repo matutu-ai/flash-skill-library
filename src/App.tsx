@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, type CSSProperties, type RefObject } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const BG_IMAGE_1 =
@@ -10,127 +10,152 @@ const SPOTLIGHT_R = 260;
 
 type RevealLayerProps = {
   image: string;
-  cursorX: number;
-  cursorY: number;
+  sectionRef: RefObject<HTMLElement>;
 };
 
-function RevealLayer({ image, cursorX, cursorY }: RevealLayerProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+function RevealLayer({ image, sectionRef }: RevealLayerProps) {
   const revealRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const resizeCanvas = () => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
+    const section = sectionRef.current;
+    const reveal = revealRef.current;
+    if (!section || !reveal) return;
 
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const target = { x: -999, y: -999 };
+    const smooth = { x: -999, y: -999 };
+    let frame = 0;
+    let hasPointer = false;
+    let isVisible = true;
+
+    const paint = () => {
+      reveal.style.setProperty('--spot', `${smooth.x.toFixed(2)}px ${smooth.y.toFixed(2)}px`);
     };
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    const cancelFrame = () => {
+      if (!frame) return;
+      cancelAnimationFrame(frame);
+      frame = 0;
+    };
 
-    return () => window.removeEventListener('resize', resizeCanvas);
-  }, []);
+    const animate = () => {
+      frame = 0;
+      if (!isVisible || document.hidden || motionQuery.matches || !hasPointer) return;
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const reveal = revealRef.current;
-    if (!canvas || !reveal) return;
+      const dx = target.x - smooth.x;
+      const dy = target.y - smooth.y;
+      smooth.x += dx * 0.1;
+      smooth.y += dy * 0.1;
 
-    const context = canvas.getContext('2d');
-    if (!context) return;
+      if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+        smooth.x = target.x;
+        smooth.y = target.y;
+      }
 
-    context.clearRect(0, 0, canvas.width, canvas.height);
+      paint();
+      if (smooth.x !== target.x || smooth.y !== target.y) frame = requestAnimationFrame(animate);
+    };
 
-    const gradient = context.createRadialGradient(
-      cursorX,
-      cursorY,
-      0,
-      cursorX,
-      cursorY,
-      SPOTLIGHT_R,
-    );
-    gradient.addColorStop(0, 'rgba(255,255,255,1)');
-    gradient.addColorStop(0.4, 'rgba(255,255,255,1)');
-    gradient.addColorStop(0.6, 'rgba(255,255,255,0.75)');
-    gradient.addColorStop(0.75, 'rgba(255,255,255,0.4)');
-    gradient.addColorStop(0.88, 'rgba(255,255,255,0.12)');
-    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+    const schedule = () => {
+      if (!frame && isVisible && !document.hidden && !motionQuery.matches) {
+        frame = requestAnimationFrame(animate);
+      }
+    };
 
-    context.fillStyle = gradient;
-    context.beginPath();
-    context.arc(cursorX, cursorY, SPOTLIGHT_R, 0, Math.PI * 2);
-    context.fill();
+    const setStaticReveal = () => {
+      const rect = section.getBoundingClientRect();
+      smooth.x = rect.width * 0.62;
+      smooth.y = rect.height * 0.56;
+      paint();
+    };
 
-    const mask = `url(${canvas.toDataURL()})`;
-    reveal.style.maskImage = mask;
-    reveal.style.webkitMaskImage = mask;
-    reveal.style.maskSize = '100% 100%';
-    reveal.style.webkitMaskSize = '100% 100%';
-  });
+    const handlePointerMove = (event: PointerEvent) => {
+      const rect = section.getBoundingClientRect();
+      target.x = event.clientX - rect.left;
+      target.y = event.clientY - rect.top;
+      if (!hasPointer) {
+        smooth.x = target.x;
+        smooth.y = target.y;
+        hasPointer = true;
+      }
+      schedule();
+    };
+
+    const handleMotionPreference = () => {
+      cancelFrame();
+      if (motionQuery.matches) setStaticReveal();
+      else {
+        hasPointer = false;
+        smooth.x = -999;
+        smooth.y = -999;
+        paint();
+      }
+    };
+
+    const handleVisibility = () => {
+      if (document.hidden) cancelFrame();
+      else schedule();
+    };
+
+    const intersectionObserver = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (!isVisible) cancelFrame();
+      else schedule();
+    });
+    const resizeObserver = new ResizeObserver(() => {
+      if (motionQuery.matches) setStaticReveal();
+    });
+
+    section.addEventListener('pointermove', handlePointerMove, { passive: true });
+    document.addEventListener('visibilitychange', handleVisibility);
+    motionQuery.addEventListener('change', handleMotionPreference);
+    intersectionObserver.observe(section);
+    resizeObserver.observe(section);
+    if (motionQuery.matches) setStaticReveal();
+
+    return () => {
+      cancelFrame();
+      section.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('visibilitychange', handleVisibility);
+      motionQuery.removeEventListener('change', handleMotionPreference);
+      intersectionObserver.disconnect();
+      resizeObserver.disconnect();
+    };
+  }, [image, sectionRef]);
 
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{ display: 'none' }}
-      />
-      <div
-        ref={revealRef}
-        className="absolute inset-0 bg-center bg-cover bg-no-repeat z-30 pointer-events-none"
-        style={{ backgroundImage: `url(${image})` }}
-      />
-    </>
+    <div
+      ref={revealRef}
+      aria-hidden="true"
+      className="lithos-reveal absolute inset-0 z-30 bg-center bg-cover bg-no-repeat pointer-events-none"
+      style={{
+        backgroundImage: `url(${image})`,
+        '--spot-radius': `${SPOTLIGHT_R}px`,
+      } as CSSProperties}
+    />
   );
 }
 
 export default function App() {
-  const mouse = useRef({ x: -999, y: -999 });
-  const smooth = useRef({ x: -999, y: -999 });
-  const rafRef = useRef<number | null>(null);
-  const [cursorPos, setCursorPos] = useState({ x: -999, y: -999 });
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      mouse.current.x = event.clientX;
-      mouse.current.y = event.clientY;
-    };
-
-    const animate = () => {
-      smooth.current.x += (mouse.current.x - smooth.current.x) * 0.1;
-      smooth.current.y += (mouse.current.y - smooth.current.y) * 0.1;
-      setCursorPos({ x: smooth.current.x, y: smooth.current.y });
-      rafRef.current = requestAnimationFrame(animate);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    rafRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
+  const sectionRef = useRef<HTMLElement>(null);
 
   return (
     <section
+      ref={sectionRef}
       id="lithos-hero"
       aria-label="Lithos interactive geology field note"
       className="lithos-hero relative w-full overflow-hidden h-screen bg-black tracking-[-0.02em]"
-      style={{ height: '100dvh', fontFamily: "'Inter', sans-serif" }}
+      style={{
+        height: '100dvh',
+        fontFamily: "'Avenir Next', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif",
+      }}
     >
         <div
           className="absolute inset-0 z-10 bg-center bg-cover bg-no-repeat hero-zoom"
           style={{ backgroundImage: `url(${BG_IMAGE_1})` }}
         />
 
-        <RevealLayer
-          image={BG_IMAGE_2}
-          cursorX={cursorPos.x}
-          cursorY={cursorPos.y}
-        />
+        <RevealLayer image={BG_IMAGE_2} sectionRef={sectionRef} />
 
         <div className="absolute top-[14%] left-0 right-0 z-50 flex flex-col items-center text-center px-5 pointer-events-none">
           <p

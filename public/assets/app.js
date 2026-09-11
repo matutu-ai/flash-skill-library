@@ -27,15 +27,31 @@
   const lithosHero = $('#lithos-hero-root');
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const chapters = ['01 / 等待开启', '02 / 拉开抽屉', '03 / 分类展开', '04 / 进入档案', '05 / 灵感归位'];
+  const sticky = $('.story-sticky');
+  const heroCopy = $('.hero-copy');
+  const chapterLabel = $('#chapter-label');
+  const progressValue = $('#progress-value');
   let animationFrame = 0;
   let lastProgress = -1;
+  let lastChapter = -1;
+  let lastPercent = -1;
+  let lastHeroInert = false;
+  let storyNearViewport = true;
+  let layoutDirty = true;
+  let headerHeight = 0;
+  let storyDistance = 1;
+  let darkHeaderBoundary = 0;
+
+  function measureLayout() {
+    headerHeight = siteHeader.getBoundingClientRect().height;
+    storyDistance = Math.max(1, story.offsetHeight - sticky.offsetHeight);
+    darkHeaderBoundary = lithosHero.offsetTop + lithosHero.offsetHeight - headerHeight * .65;
+    layoutDirty = false;
+  }
+
   function renderStory() {
-    animationFrame = 0;
     const rect = story.getBoundingClientRect();
-    const sticky = $('.story-sticky');
-    const headerHeight = $('.site-header').getBoundingClientRect().height;
-    const distance = Math.max(1, story.offsetHeight - sticky.offsetHeight);
-    const progress = motionQuery.matches ? 0 : clamp((headerHeight - rect.top) / distance);
+    const progress = motionQuery.matches ? 0 : clamp((headerHeight - rect.top) / storyDistance);
     if (progress === lastProgress) return;
     lastProgress = progress;
     const pull = stage(progress, 0, .35);
@@ -43,31 +59,53 @@
     const zoom = stage(progress, .60, .85);
     const reveal = stage(progress, .85, 1);
     root.style.cssText = `--p:${progress};--pull:${pull};--unfold:${unfold};--zoom:${zoom};--reveal:${reveal};--hero-visibility:${pull > .68 ? 'hidden' : 'visible'};--ending-visibility:${reveal > 0 ? 'visible' : 'hidden'}`;
-    $('.hero-copy').inert = pull > .68;
+    const heroInert = pull > .68;
+    if (heroInert !== lastHeroInert) {
+      heroCopy.inert = heroInert;
+      lastHeroInert = heroInert;
+    }
     const chapter = progress === 0 ? 0 : progress < .35 ? 1 : progress < .60 ? 2 : progress < .85 ? 3 : 4;
-    $('#chapter-label').textContent = chapters[chapter];
-    $('#progress-value').textContent = `${String(Math.round(progress * 100)).padStart(2, '0')}%`;
-  }
-  function scheduleStory() {
-    if (!animationFrame && !document.hidden) animationFrame = requestAnimationFrame(renderStory);
+    if (chapter !== lastChapter) {
+      chapterLabel.textContent = chapters[chapter];
+      lastChapter = chapter;
+    }
+    const percent = Math.round(progress * 100);
+    if (percent !== lastPercent) {
+      progressValue.textContent = `${String(percent).padStart(2, '0')}%`;
+      lastPercent = percent;
+    }
   }
   function renderHeaderTone() {
-    const heroBottom = lithosHero.getBoundingClientRect().bottom;
-    siteHeader.classList.toggle('on-dark', heroBottom > siteHeader.offsetHeight * .65);
+    siteHeader.classList.toggle('on-dark', window.scrollY < darkHeaderBoundary);
   }
-  window.addEventListener('scroll', () => { scheduleStory(); renderHeaderTone(); }, {passive:true});
-  window.addEventListener('resize', () => { lastProgress = -1; scheduleStory(); renderHeaderTone(); }, {passive:true});
-  motionQuery.addEventListener('change', () => { lastProgress = -1; scheduleStory(); });
+  function renderViewport() {
+    animationFrame = 0;
+    if (layoutDirty) measureLayout();
+    renderHeaderTone();
+    if (storyNearViewport) renderStory();
+  }
+  function scheduleViewport() {
+    if (!animationFrame && !document.hidden) animationFrame = requestAnimationFrame(renderViewport);
+  }
+  window.addEventListener('scroll', scheduleViewport, {passive:true});
+  window.addEventListener('resize', () => { layoutDirty = true; lastProgress = -1; scheduleViewport(); }, {passive:true});
+  motionQuery.addEventListener('change', () => { lastProgress = -1; scheduleViewport(); });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && animationFrame) { cancelAnimationFrame(animationFrame); animationFrame = 0; }
-    else scheduleStory();
+    else scheduleViewport();
   });
-  new ResizeObserver(() => { lastProgress = -1; scheduleStory(); }).observe(story);
+  new ResizeObserver(() => { layoutDirty = true; lastProgress = -1; scheduleViewport(); }).observe(story);
+  new IntersectionObserver(([entry]) => {
+    storyNearViewport = entry.isIntersecting;
+    if (storyNearViewport) {
+      lastProgress = -1;
+      scheduleViewport();
+    }
+  }, {rootMargin:'100% 0px'}).observe(story);
   $('.hero-actions .button').addEventListener('click', event => {
     if (motionQuery.matches) { event.preventDefault(); $('#library').scrollIntoView({behavior:'instant'}); }
   });
-  renderHeaderTone();
-  renderStory();
+  renderViewport();
 
   let category = 'all';
   const search = $('#skill-search');

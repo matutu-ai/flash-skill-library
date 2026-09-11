@@ -32,7 +32,7 @@ use_cases:
   - 将角色、材质、遮挡等语义变化转换为可运行的动画素材
 included_skills:
   - oil-motion
-github: https://github.com/oil-oil/oil-motion
+github: https://github.com/matutu-ai/html-sydh
 created: "2026-09-08"
 updated: "2026-09-09"
 input: 页面用途、主体与风格、交互方式、目标设备，以及已有图片或视频。
@@ -46,13 +46,13 @@ requirements:
   - 下载提供 SKILL.md 单文件预览；完整流程还需要配套 scripts、references 和 assets。
 example: 使用 oil-motion，为公开 Skill 集合网站设计档案抽屉随滚动打开的动效，停止滚动时定格，向上滚动时退回。
 icon: spark
-source_label: oil-oil/oil-motion
+source_label: matutu-ai/html-sydh
 github_relation: upstream_source
 source_file: SKILL.md
 file_name: skills/oil-motion/SKILL.md
-entry_url: https://github.com/oil-oil/oil-motion/blob/main/SKILL.md
+entry_url: https://github.com/matutu-ai/html-sydh/blob/main/SKILL.md
 entry_type: single_skill
 license: MIT
 license_note: 按仓库 LICENSE 条款使用。
 visibility: public
-publisher: oil-oil
+publisher: matutu-ai

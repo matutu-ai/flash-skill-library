@@ -29,4 +29,4 @@ Oil Motion 将滚动、拖拽等交互意图转换为可验收的视觉方案、
 - `prompt.md`：最小可复制调用提示词。
 - `SKILL.md`：原始完整 Skill 说明，是流程与规则依据。
 
-源仓库：[oil-oil/oil-motion](https://github.com/oil-oil/oil-motion)
+公开仓库：[matutu-ai/html-sydh](https://github.com/matutu-ai/html-sydh)

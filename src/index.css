@@ -1,12 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .lithos-hero,
-.lithos-hero * { font-family: 'Inter', sans-serif; }
+.lithos-hero * {
+  font-family: 'Avenir Next', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
 .lithos-hero .font-playfair { font-family: 'Playfair Display', serif; }
+.lithos-reveal {
+  --spot: -999px -999px;
+  --spot-radius: 260px;
+  -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--spot), #000 0%, #000 40%, rgb(0 0 0 / 75%) 60%, rgb(0 0 0 / 40%) 75%, rgb(0 0 0 / 12%) 88%, transparent 100%);
+  mask-image: radial-gradient(circle var(--spot-radius) at var(--spot), #000 0%, #000 40%, rgb(0 0 0 / 75%) 60%, rgb(0 0 0 / 40%) 75%, rgb(0 0 0 / 12%) 88%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
 
 @keyframes heroReveal { 0%{opacity:0;transform:translateY(28px);filter:blur(12px)} 100%{opacity:1;transform:translateY(0);filter:blur(0)} }
 @keyframes heroFadeUp { 0%{opacity:0;transform:translateY(20px)} 100%{opacity:1;transform:translateY(0)} }
