@@ -1,7 +1,7 @@
 id: "geo-bd"
 order: 5
 catalog_status: "active"
-name: "GEO-BD · 企业 GEO 诊断"
+name: "GEO-BD · 企业初次诊断"
 description: "根据企业事实、AI 认知记录、竞争情况和证据，输出 GEO 诊断、机会评分、行动计划与复测报告。"
 category: "GEO"
 tags:

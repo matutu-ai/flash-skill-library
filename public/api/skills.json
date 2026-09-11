@@ -76,7 +76,7 @@
   },
   {
     "id": "geo",
-    "name": "GEO V3 · 企业增长闭环",
+    "name": "GEO V3 · 关键词&九大画像",
     "category": "GEO",
     "tags": [
       "GEO",
@@ -101,7 +101,7 @@
   },
   {
     "id": "geo-bd",
-    "name": "GEO-BD · 企业 GEO 诊断",
+    "name": "GEO-BD · 企业初次诊断",
     "category": "GEO",
     "tags": [
       "GEO 诊断",

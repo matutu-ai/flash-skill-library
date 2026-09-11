@@ -1,4 +1,4 @@
-# GEO-BD · 企业 GEO 诊断
+# GEO-BD · 企业初次诊断
 
 这个 Skill 是一套结构化 GEO Diagnostic Engine。它把企业事实、证据、真实 AI 认知、Query Matrix 和已确认竞品转化为可追溯的 GEO 评分、缺口、机会与行动计划，并支持 Executive、Operational、Technical 三层报告和前后轮复测。
 

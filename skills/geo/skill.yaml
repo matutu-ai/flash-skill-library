@@ -1,7 +1,7 @@
 id: "geo"
 order: 4
 catalog_status: "active"
-name: "GEO V3 · 企业增长闭环"
+name: "GEO V3 · 关键词&九大画像"
 description: "将企业资料转化为可追溯的证据、关键词、九大画像、内容矩阵与发布策略，并通过验证和缺口分析持续优化。"
 category: "GEO"
 tags:
@@ -42,7 +42,7 @@ requirements:
   - "企业事实与结论需要可验证来源；缺失信息必须明确标注。"
   - "完整执行需要按 INDEX.md 路由读取仓库中的 schemas、workflows、templates 与 references。"
   - "任何客户语料库读取、创建或更新均需遵守正式入口中的确认规则。"
-example: "使用 GEO V3 · 企业增长闭环，分析我提供的企业资料，先给出仓库框架摘要和资料缺口，再生成简约版关键词与九大画像。"
+example: "使用 GEO V3 · 关键词&九大画像，分析我提供的企业资料，先给出仓库框架摘要和资料缺口，再生成简约版关键词与九大画像。"
 icon: "search"
 source_label: "matutu-ai/GEO"
 github_relation: "upstream_source"

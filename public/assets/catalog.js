@@ -177,7 +177,7 @@ window.SKILL_CATALOG = [
   },
   {
     "id": "geo",
-    "name": "GEO V3 · 企业增长闭环",
+    "name": "GEO V3 · 关键词&九大画像",
     "subtitle": "从企业资料到验证闭环",
     "category": "GEO",
     "categoryKey": "geo",
@@ -207,7 +207,7 @@ window.SKILL_CATALOG = [
       "内容矩阵与发布策略制定",
       "GEO 验证与缺口分析"
     ],
-    "example": "使用 GEO V3 · 企业增长闭环，分析我提供的企业资料，先给出仓库框架摘要和资料缺口，再生成简约版关键词与九大画像。",
+    "example": "使用 GEO V3 · 关键词&九大画像，分析我提供的企业资料，先给出仓库框架摘要和资料缺口，再生成简约版关键词与九大画像。",
     "tags": [
       "GEO",
       "关键词策略",
@@ -234,7 +234,7 @@ window.SKILL_CATALOG = [
   },
   {
     "id": "geo-bd",
-    "name": "GEO-BD · 企业 GEO 诊断",
+    "name": "GEO-BD · 企业初次诊断",
     "subtitle": "看清 AI 知道什么，也看清下一步",
     "category": "GEO",
     "categoryKey": "geo",
