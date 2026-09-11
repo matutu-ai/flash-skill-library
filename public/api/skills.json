@@ -197,5 +197,30 @@
     "stars": null,
     "version": "未统一声明",
     "created_time": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "id": "ui-skill",
+    "name": "AI Native Dark SaaS UI",
+    "category": "自动化",
+    "tags": [
+      "AI界面",
+      "深色SaaS",
+      "UI设计",
+      "Skill Marketplace",
+      "Midjourney"
+    ],
+    "prompt": "使用 ui-skill，为我的 AI Skill 集合网站设计一个与现有品牌一致的页面。先说明页面结构、组件职责、设计 tokens、动效方案和响应式策略，再按当前技术栈实现；保留一个清晰的主要动作，确保移动端、键盘操作和 prefers-reduced-motion 都可用。",
+    "workflow": [
+      "识别主要用户、主要动作和页面类型",
+      "输出页面结构、组件拆分和设计 tokens",
+      "按现有技术栈建立深色界面与产品级组件",
+      "设计克制的动效、状态反馈与响应式布局",
+      "按可读性、键盘操作、移动端和减少动态效果完成验收"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "未声明",
+    "created_time": "2026-09-10T00:00:00.000Z"
   }
 ]

@@ -458,5 +458,62 @@ window.SKILL_CATALOG = [
     "entryUrl": "https://github.com/matutu-ai/https-github.com-Zeejay0-gathered-scenes-zine-skill/blob/main/README.md",
     "fileName": "skills/gathered-scenes-zine-skill/SKILL.md",
     "url": "skills/gathered-scenes-zine-skill/"
+  },
+  {
+    "id": "ui-skill",
+    "name": "AI Native Dark SaaS UI",
+    "subtitle": "为 AI 产品建立可信的深色界面系统",
+    "category": "自动化",
+    "categoryKey": "automation",
+    "description": "为 AI SaaS、Agent 平台、开发者工具、开源社区与 Skill 市场设计高级深色界面，明确页面结构、组件职责、设计 tokens、动效和响应式策略。",
+    "promptText": "使用 ui-skill，为我的 AI Skill 集合网站设计一个与现有品牌一致的页面。先说明页面结构、组件职责、设计 tokens、动效方案和响应式策略，再按当前技术栈实现；保留一个清晰的主要动作，确保移动端、键盘操作和 prefers-reduced-motion 都可用。",
+    "input": "产品用户、主要动作、页面类型、现有技术栈、品牌约束和目标设备。",
+    "output": [
+      "页面结构与组件职责",
+      "颜色、字体、间距、表面和边框 tokens",
+      "动效、响应式策略与可访问性验收清单"
+    ],
+    "requirements": [
+      "优先复用现有项目技术栈和组件约定。",
+      "不要为了装饰添加不必要的包、3D 场景或动画库。",
+      "需要检查键盘操作、对比度、触控目标和 prefers-reduced-motion。"
+    ],
+    "workflow": [
+      "识别主要用户、主要动作和页面类型",
+      "输出页面结构、组件拆分和设计 tokens",
+      "按现有技术栈建立深色界面与产品级组件",
+      "设计克制的动效、状态反馈与响应式布局",
+      "按可读性、键盘操作、移动端和减少动态效果完成验收"
+    ],
+    "useCases": [
+      "AI SaaS 产品首页与控制台",
+      "Agent 平台和开发者工具界面",
+      "AI Skill Marketplace 与开源社区",
+      "结合 Midjourney 视觉提示词的产品概念设计"
+    ],
+    "example": "使用 AI Native Dark SaaS UI，为这个 Skill Marketplace 设计一个高级深色首页；先输出结构、组件、tokens、动效和响应式策略，再按现有技术栈实现。",
+    "tags": [
+      "AI界面",
+      "深色SaaS",
+      "UI设计",
+      "Skill Marketplace",
+      "Midjourney"
+    ],
+    "model": [],
+    "includedSkills": [
+      "ai-native-dark-saas-ui"
+    ],
+    "version": "未声明",
+    "author": "matutu-ai",
+    "created": "2026-09-10",
+    "updated": "2026-09-11",
+    "license": "未声明",
+    "licenseNote": "仓库当前未声明标准开源许可证，使用前请核对仓库说明。",
+    "icon": "layout",
+    "sourceLabel": "matutu-ai/ui-skill",
+    "sourceUrl": "https://github.com/matutu-ai/ui-skill",
+    "entryUrl": "https://github.com/matutu-ai/ui-skill/blob/main/SKILL.md",
+    "fileName": "skills/ui-skill/SKILL.md",
+    "url": "skills/ui-skill/"
   }
 ];
