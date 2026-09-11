@@ -171,7 +171,7 @@ function skillSchema(skill) {
         ...(author ? { author } : {}),
         isPartOf: {
           '@type': 'CollectionPage',
-          name: 'Flash Skill Archive',
+          name: 'TUTU',
           url: publicUrl()
         }
       },
@@ -193,13 +193,13 @@ function skillSchema(skill) {
 }
 
 function renderHomepageSeo(skills) {
-  const title = 'Flash Skill Archive | AI Skill Marketplace';
-  const description = 'Flash Skill Archive 是 GitHub 驱动的 AI Skill 全球知识库，收录公开 AI Skills、Prompts、Agents 与 Workflows。';
+  const title = 'TUTU | AI Skill Archive';
+  const description = 'TUTU 是一个 GitHub 驱动的 AI Skill 全球知识库，收录公开 AI Skills、Prompts、Agents 与 Workflows。';
   const canonicalUrl = publicUrl();
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Flash Skill Archive',
+    name: 'TUTU',
     description,
     url: canonicalUrl,
     mainEntity: {
@@ -219,7 +219,7 @@ function renderHomepageSeo(skills) {
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="${escapeHtml(canonicalUrl)}">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Flash Skill Archive">
+  <meta property="og:site_name" content="TUTU">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
@@ -276,7 +276,7 @@ function renderList(items, className = '') {
 function renderDetailPage(skill) {
   const model = skill.model.length ? skill.model.join(' · ') : '通用';
   const canonicalUrl = publicUrl(skill.url);
-  const detailTitle = `${skill.name} AI Skill | Flash Skill Archive`;
+  const detailTitle = `${skill.name} AI Skill | TUTU`;
   const detailDescription = seoDescription(skill);
   const tags = skill.tags.map(tag => `<li>${escapeHtml(tag)}</li>`).join('');
   const workflow = skill.workflow.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><p>${escapeHtml(step)}</p></li>`).join('');
@@ -298,7 +298,7 @@ function renderDetailPage(skill) {
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="${escapeHtml(canonicalUrl)}">
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Flash Skill Archive">
+  <meta property="og:site_name" content="TUTU">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:title" content="${escapeHtml(detailTitle)}">
   <meta property="og:description" content="${escapeHtml(detailDescription)}">
@@ -316,7 +316,7 @@ function renderDetailPage(skill) {
 <body class="skill-detail-body">
   <a class="skip-link" href="#detail-content">直接阅读 Skill</a>
   <header class="site-header skill-detail-header">
-    <a class="brand" href="../../index.html" aria-label="Flash Skill Archive 首页"><span class="brand-mark" aria-hidden="true">F<span>•</span></span><span>Flash Skill Archive<small>AI SKILL MARKETPLACE</small></span></a>
+    <a class="brand" href="../../index.html" aria-label="TUTU 首页"><span class="brand-mark" aria-hidden="true">T<span>•</span></span><span class="brand-name">TUTU<small>AI SKILL ARCHIVE</small></span></a>
     <nav aria-label="详情页导航"><a class="nav-link" href="../../index.html#library">全部 Skill</a><a class="nav-cta" href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer">GitHub 仓库 <span aria-hidden="true">↗</span></a></nav>
   </header>
 
@@ -414,7 +414,7 @@ function renderDetailPage(skill) {
     </div>
   </main>
 
-  <footer class="page-width footer skill-detail-footer"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">F<span>•</span></span><span>Flash Skill Archive<small>AI SKILL MARKETPLACE</small></span></a><p>${escapeHtml(skill.sourceLabel)}</p><a href="#detail-content">回到顶部 ↑</a></footer>
+  <footer class="page-width footer skill-detail-footer"><a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">T<span>•</span></span><span class="brand-name">TUTU<small>AI SKILL ARCHIVE</small></span></a><p>${escapeHtml(skill.sourceLabel)}</p><a href="#detail-content">回到顶部 ↑</a></footer>
   <div class="skill-detail-toast" id="skill-detail-toast" role="status" hidden></div>
 </body>
 </html>
