@@ -1,6 +1,15 @@
 (() => {
   'use strict';
   const categoryLabels = {video:'AI视频', image:'AI图片', geo:'GEO', agent:'Agent', automation:'自动化', prompt:'Prompt'};
+  const categoryOrder = ['video', 'image', 'geo', 'agent', 'automation', 'prompt'];
+  const categoryDescriptions = {
+    video: '把故事、产品与镜头想法编译成可执行的视频方案。',
+    image: '把视觉素材转化为新的图像方向与创作方法。',
+    geo: '让企业事实、内容与增长机会被 AI 看见。',
+    agent: '让智能体承担完整、可验证的任务流程。',
+    automation: '把重复资料整理与交付流程变成稳定工作流。',
+    prompt: '把想法整理成可复用、可直接调用的指令。'
+  };
   const legacyCategoryKeys = {web:'automation', marketing:'geo', office:'automation'};
   const catalog = (window.SKILL_CATALOG || []).map(skill => {
     const categoryKey = legacyCategoryKeys[skill.categoryKey] || skill.categoryKey;
@@ -96,11 +105,24 @@
   function renderCatalog() {
     const query = search.value.trim();
     const filtered = findSkills(query).filter(skill => category === 'all' || skill.categoryKey === category);
-    grid.innerHTML = filtered.map(skill => {
+    const renderCard = skill => {
       const tags = listValues(skill.tags).slice(0, 3).map(tag => `<span>${escapeHTML(tag)}</span>`).join('');
       const promptDisabled = hasPrompt(skill) ? '' : ' disabled title="Prompt 暂不可用"';
       return `<article class="skill-card"><button class="card-open" data-action="detail" data-skill="${escapeHTML(skill.id)}" aria-label="快速查看 ${escapeHTML(skill.name)}"><div class="card-top"><span class="skill-icon ${escapeHTML(skill.categoryKey)}">${icon(skill.icon)}</span><span class="card-index">REPO / ${String(catalog.indexOf(skill) + 1).padStart(3, '0')}</span></div><h3>${escapeHTML(skill.name)}</h3><p>${escapeHTML(skill.subtitle)}</p><div class="card-tags" aria-label="技能标签">${tags}</div><div class="card-facts"><span><small>分类</small>${escapeHTML(skill.category)}</span><span><small>模型</small>${escapeHTML(modelLabel(skill))}</span><span><small>版本</small>${escapeHTML(skill.version || '未声明')}</span></div></button><div class="card-bottom"><span>${escapeHTML(skill.sourceLabel)}</span><span class="card-actions"><a href="${encodeURI(skill.url)}">查看详情 <span aria-hidden="true">↗</span></a><button data-action="copy" data-skill="${escapeHTML(skill.id)}"${promptDisabled}>复制 Prompt</button><a href="${escapeHTML(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 ${escapeHTML(skill.sourceLabel)} 仓库">GitHub <span aria-hidden="true">↗</span></a></span></div></article>`;
-    }).join('');
+    };
+    const groups = new Map(categoryOrder.map(key => [key, []]));
+    filtered.forEach(skill => {
+      if (!groups.has(skill.categoryKey)) groups.set(skill.categoryKey, []);
+      groups.get(skill.categoryKey).push(skill);
+    });
+    grid.innerHTML = [...groups.entries()].filter(([, skills]) => skills.length).map(([key, skills], index) => `
+      <section class="skill-category-group category-${escapeHTML(key)}" aria-labelledby="skill-category-${escapeHTML(key)}">
+        <div class="skill-category-heading">
+          <div><p class="skill-category-kicker">${String(index + 1).padStart(2, '0')} / CATEGORY</p><h3 id="skill-category-${escapeHTML(key)}">${escapeHTML(categoryLabels[key] || key)}</h3><p>${escapeHTML(categoryDescriptions[key] || '按能力整理的公开 Skill 仓库。')}</p></div>
+          <span class="skill-category-count">${String(skills.length).padStart(2, '0')} SKILLS</span>
+        </div>
+        <div class="skill-category-grid">${skills.map(renderCard).join('')}</div>
+      </section>`).join('');
 
     if (query && category !== 'all') $('#result-summary').textContent = `“${query}”在${categoryLabel(category)}分类中找到 ${filtered.length} 个公开技能仓库`;
     else if (query) $('#result-summary').textContent = `“${query}”找到 ${filtered.length} 个公开技能仓库`;

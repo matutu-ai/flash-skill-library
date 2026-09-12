@@ -119,3 +119,16 @@ dialog{border:1px solid #d9dfcf;border-radius:12px;width:min(710px,calc(100% - 3
 @media(max-width:980px){.skill-detail-hero-grid{gap:42px}.skill-detail-layout{grid-template-columns:minmax(0,1fr) 230px}.skill-detail-two-column{gap:30px}.skill-detail-two-column>div+div{padding-left:30px}}
 @media(max-width:760px){.skill-detail-page{padding-bottom:62px}.skill-detail-hero{padding-top:34px;padding-bottom:42px}.skill-detail-back{margin-bottom:32px}.skill-detail-hero-grid{grid-template-columns:1fr;gap:30px}.skill-detail-hero h1{font-size:42px;letter-spacing:-1.5px}.skill-detail-subtitle{font-size:15px}.skill-detail-lede{font-size:12px}.skill-detail-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0 17px}.skill-detail-meta>div{display:block;padding:14px 8px}.skill-detail-meta>div:nth-child(odd){border-right:1px solid #e0e5da}.skill-detail-meta dt{margin-bottom:6px}.skill-detail-layout{grid-template-columns:1fr;padding-top:24px}.skill-detail-section{padding:27px 24px;scroll-margin-top:88px}.skill-detail-section h2{font-size:22px}.skill-detail-use-steps,.skill-detail-two-column{grid-template-columns:1fr}.skill-detail-two-column{gap:32px}.skill-detail-two-column>div+div{border-top:1px solid #e0e5da;border-left:0;padding-top:32px;padding-left:0}.skill-detail-aside{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.skill-detail-toc{display:none}.skill-detail-source:first-of-type{grid-row:span 2}.skill-detail-footer{margin-top:0}}
 @media(max-width:520px){.skill-detail-hero h1{font-size:35px}.skill-detail-actions{display:grid}.skill-detail-actions .button{width:100%}.skill-detail-meta{grid-template-columns:1fr}.skill-detail-meta>div:nth-child(odd){border-right:0}.skill-detail-section-heading{display:block}.skill-detail-copy-small{margin:-4px 0 18px}.skill-detail-prompt{padding:19px;font-size:11px}.skill-detail-aside{grid-template-columns:1fr}.skill-detail-source:first-of-type{grid-row:auto}.skill-detail-footer{display:grid;grid-template-columns:1fr auto}.skill-detail-footer>p{display:none}}
+
+/* 分类展示：视频在桌面端保持同一行，其他 Skill 按类别分组。 */
+.skill-grid{display:grid;grid-template-columns:1fr;gap:52px}
+.skill-category-group{display:grid;gap:18px}
+.skill-category-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;border-top:1px solid #d6ddce;padding-top:18px}
+.skill-category-kicker{margin:0 0 8px;color:#96a28d;font:8px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.5px}
+.skill-category-heading h3{margin:0;color:var(--ink);font-size:25px;font-weight:520;letter-spacing:-.5px}
+.skill-category-heading p{margin:7px 0 0;color:#87947d;font-size:11px;line-height:1.7}
+.skill-category-count{color:#99a58d;font:8px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.4px;white-space:nowrap}
+.skill-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media(max-width:1100px){.skill-category-grid{gap:15px}}
+@media(max-width:760px){.skill-category-heading{align-items:start;gap:14px}.skill-category-heading h3{font-size:22px}.skill-category-heading p{font-size:10px}.skill-category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:440px){.skill-category-grid{grid-template-columns:1fr}}
