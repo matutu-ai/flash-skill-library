@@ -123,5 +123,30 @@
     "stars": null,
     "version": "未声明",
     "created_time": "2026-08-26T00:00:00.000Z"
+  },
+  {
+    "id": "seedance-cinematic-director",
+    "name": "Seedance Cinematic Director · 电影叙事导演",
+    "category": "AI视频",
+    "tags": [
+      "Seedance",
+      "电影导演",
+      "叙事视频",
+      "镜头设计",
+      "人物表演"
+    ],
+    "prompt": "使用 seedance-cinematic-director，把我提供的故事或视频 Brief 转化为电影级导演方案和可直接复制的 Prompt。先确认或标注模型、时长、画幅、参考素材职责和不可改变的内容，再完成场景分析、人物表演、情绪时间线、走位、摄影、光线、环境、真实感、负向约束和结尾状态；最后按固定模板输出 Prompt，并给出表演、摄影、电影感和真实感评分。不要虚构平台不支持的参数。",
+    "workflow": [
+      "分析场景类型、戏剧目标、冲突、时间地点、视觉风格与起承转合",
+      "为人物建立可观察的表情、呼吸、姿态、手部和动作过渡",
+      "在镜头运动前确定空间锚点，再设计摄影、镜头、灯光、环境和真实感",
+      "按电影、Seedance、商业或叙事模板编译可复制提示词",
+      "用 Prompt Checker 评分并修订低于 80 分的部分，或说明不可用约束"
+    ],
+    "embedding": null,
+    "downloads": 0,
+    "stars": null,
+    "version": "1.0",
+    "created_time": "2026-09-12T00:00:00.000Z"
   }
 ]

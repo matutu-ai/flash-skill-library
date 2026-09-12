@@ -365,5 +365,84 @@ window.SKILL_CATALOG = [
     "entryUrl": "https://github.com/matutu-ai/danyuange/blob/main/SKILL.md",
     "fileName": "skills/danyuange/SKILL.md",
     "url": "skills/danyuange/"
+  },
+  {
+    "id": "seedance-cinematic-director",
+    "name": "Seedance Cinematic Director · 电影叙事导演",
+    "subtitle": "从故事到可拍的电影级视频 Prompt",
+    "category": "AI视频",
+    "categoryKey": "video",
+    "description": "把故事、Brief 或参考素材转化为电影级导演方案，完成表演、镜头、灯光、空间连续性与真实感设计，再编译为可复制的视频提示词。",
+    "promptText": "使用 seedance-cinematic-director，把我提供的故事或视频 Brief 转化为电影级导演方案和可直接复制的 Prompt。先确认或标注模型、时长、画幅、参考素材职责和不可改变的内容，再完成场景分析、人物表演、情绪时间线、走位、摄影、光线、环境、真实感、负向约束和结尾状态；最后按固定模板输出 Prompt，并给出表演、摄影、电影感和真实感评分。不要虚构平台不支持的参数。",
+    "input": "故事、视频 Brief、参考图片或视频，以及已知的模型、时长、画幅、视觉风格和不可改变的内容。",
+    "output": [
+      "中文导演说明与关键创作假设",
+      "包含固定章节的可直接复制视频 Prompt",
+      "表演、摄影、电影感和真实感评分"
+    ],
+    "requirements": [
+      "模型、时长、画幅或参考素材职责未提供时，必须使用保守假设并明确标注。",
+      "不得承诺模型不支持的平台参数；参考人物、Logo、版权角色和真人素材必须符合授权与平台规则。",
+      "Seedance 2.5 最终导出需要同时遵守仓库内的 Seedance 2.5 Export Adapter。"
+    ],
+    "platformUsage": [
+      {
+        "name": "豆包 / 通义千问 / 即梦（按目标模型使用）",
+        "summary": "在对话平台完成电影导演分析和 Prompt 编译，再交给具备目标视频模型能力的平台生成。",
+        "steps": [
+          "提供故事或 Brief，并补充模型、时长、画幅、参考素材、视觉风格和必须保留的内容。",
+          "要求先完成场景、表演、走位、摄影、灯光、环境和真实感分析，再按对应模板输出完整 Prompt。",
+          "如果目标是 Seedance 2.5，要求读取 Seedance 2.5 Export Adapter，并将参考素材职责、人物锁、时间轴、声音、连续性和结尾状态写入最终 Prompt。",
+          "将最终 Prompt 复制到具备目标模型能力的豆包、即梦或其他视频生成入口，生成前核对平台参数与素材授权。"
+        ],
+        "notes": [
+          "核心导演模块与平台无关；未知参数必须标注为假设，不得虚构平台能力。",
+          "本 Skill 负责导演方案、Prompt 编译和评分，不代替平台提交生成任务。"
+        ]
+      }
+    ],
+    "workflow": [
+      "分析场景类型、戏剧目标、冲突、时间地点、视觉风格与起承转合",
+      "为人物建立可观察的表情、呼吸、姿态、手部和动作过渡",
+      "在镜头运动前确定空间锚点，再设计摄影、镜头、灯光、环境和真实感",
+      "按电影、Seedance、商业或叙事模板编译可复制提示词",
+      "用 Prompt Checker 评分并修订低于 80 分的部分，或说明不可用约束"
+    ],
+    "useCases": [
+      "电影叙事场景与情绪表演",
+      "人物动作、走位和镜头调度",
+      "广告、时尚和商业视频导演方案",
+      "Seedance 2.5 最终提示词导出与质量检查"
+    ],
+    "example": "使用 Seedance Cinematic Director，把一个女孩在暴雨夜进入废弃医院寻找哥哥的故事，编排成 12 秒 16:9 的心理惊悚片段；保留红色手电筒和雨夜外景，输出中文导演说明、完整 Prompt 与质量评分。",
+    "tags": [
+      "Seedance",
+      "电影导演",
+      "叙事视频",
+      "镜头设计",
+      "人物表演"
+    ],
+    "model": [
+      "Seedance 2.0",
+      "Seedance 2.5",
+      "Kling",
+      "Runway",
+      "Veo"
+    ],
+    "includedSkills": [
+      "seedance-cinematic-director"
+    ],
+    "version": "1.0",
+    "author": "matutu-ai",
+    "created": "2026-09-12",
+    "updated": "2026-09-12",
+    "license": "未声明",
+    "licenseNote": "公开可见不等于授权商用，使用前请核对仓库说明。",
+    "icon": "film",
+    "sourceLabel": "matutu-ai/seedance2.5-AIdy",
+    "sourceUrl": "https://github.com/matutu-ai/seedance2.5-AIdy",
+    "entryUrl": "https://github.com/matutu-ai/seedance2.5-AIdy/blob/main/SKILL.md",
+    "fileName": "skills/seedance-cinematic-director/SKILL.md",
+    "url": "skills/seedance-cinematic-director/"
   }
 ];
