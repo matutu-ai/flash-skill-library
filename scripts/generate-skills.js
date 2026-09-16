@@ -328,7 +328,7 @@ function renderDetailPage(skill) {
   <a class="skip-link" href="#detail-content">直接阅读 Skill</a>
   <header class="site-header skill-detail-header">
     <a class="brand" href="../../index.html" aria-label="TUTU 首页"><span class="brand-mark" aria-hidden="true">T<span>•</span></span><span class="brand-name">TUTU<small>AI SKILL ARCHIVE</small></span></a>
-    <nav aria-label="详情页导航"><a class="nav-link" href="../../index.html#library">全部 Skill</a><a class="nav-cta" href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer">GitHub 仓库 <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="详情页导航"><a class="nav-link" href="../../index.html#library">全部 Skill</a><a class="nav-cta" href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer" title="点击后进入技能库，按照 README 使用说明开始操作。">打开 GitHub 技能库 <span aria-hidden="true">↗</span></a></nav>
   </header>
 
   <main class="skill-detail-page" id="detail-content">
@@ -343,7 +343,7 @@ function renderDetailPage(skill) {
           <ul class="skill-detail-tags" aria-label="技能标签">${tags}</ul>
           <div class="skill-detail-actions">
             <button class="button button-dark" data-copy-prompt>复制 Prompt <span aria-hidden="true">↗</span></button>
-            <a class="button button-github" href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库 <span aria-hidden="true">↗</span></a>
+            <a class="button button-github" href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer" title="点击后进入技能库，按照 README 使用说明开始操作。">打开 GitHub 技能库 <span aria-hidden="true">↗</span></a>
             <a class="button button-light" href="${escapeHtml(skill.entryUrl)}" target="_blank" rel="noopener noreferrer">打开正式入口 <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -415,7 +415,7 @@ function renderDetailPage(skill) {
           <span>REPOSITORY</span>
           <strong>${escapeHtml(skill.sourceLabel)}</strong>
           <p>一张档案对应一个公开 GitHub 仓库。</p>
-          <a href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a>
+          <a href="${escapeHtml(skill.sourceUrl)}" target="_blank" rel="noopener noreferrer" title="点击后进入技能库，按照 README 使用说明开始操作。">打开 GitHub 技能库 ↗</a>
           <a href="${escapeHtml(skill.entryUrl)}" target="_blank" rel="noopener noreferrer">正式 Skill 入口 ↗</a>
           <a href="SKILL.md" download="${escapeHtml(skill.id)}-SKILL.md">下载入口说明 ↓</a>
         </section>
