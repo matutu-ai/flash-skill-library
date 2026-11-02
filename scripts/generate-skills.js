@@ -284,6 +284,15 @@ function renderPlatformUsage(guides) {
           </article>`).join('');
 }
 
+function renderTutorialVideo(video) {
+  if (!video) return '';
+  return `
+          <figure class="skill-detail-video">
+            <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}"></video>
+            <figcaption>${escapeHtml(video.title)}</figcaption>
+          </figure>`;
+}
+
 function renderDetailPage(skill) {
   const model = skill.model.length ? skill.model.join(' · ') : '通用';
   const canonicalUrl = publicUrl(skill.url);
@@ -384,7 +393,7 @@ function renderDetailPage(skill) {
 
         <section class="skill-detail-section" id="platform-usage">
           <p class="skill-detail-section-label">05 / PLATFORM USE</p>
-          <h2>豆包、千问怎么使用</h2>
+          <h2>豆包、千问怎么使用</h2>${renderTutorialVideo(skill.tutorialVideo)}
           <div class="skill-detail-platform-grid">${renderPlatformUsage(skill.platformUsage)}</div>
         </section>
 
@@ -468,6 +477,15 @@ function readActiveSkills() {
     if (!Array.isArray(data.platform_usage) || !data.platform_usage.length) {
       fail(`${entry.name}: platform_usage 必须是非空数组`);
     }
+    if (data.tutorial_video !== undefined) {
+      const video = data.tutorial_video;
+      for (const key of ['title', 'src', 'poster']) {
+        if (typeof video?.[key] !== 'string' || !video[key].trim()) fail(`${entry.name}: tutorial_video.${key} 必须是非空字符串`);
+      }
+      for (const key of ['src', 'poster']) {
+        if (!fs.existsSync(path.join(skillsRoot, entry.name, video[key]))) fail(`${entry.name}: tutorial_video.${key} 文件不存在`);
+      }
+    }
     data.platform_usage.forEach((guide, index) => {
       if (!guide || typeof guide.name !== 'string' || !guide.name.trim()) {
         fail(`${entry.name}: platform_usage[${index}].name 必须是非空字符串`);
@@ -518,6 +536,7 @@ function readActiveSkills() {
       output: data.output,
       requirements: data.requirements,
       platformUsage: data.platform_usage,
+      tutorialVideo: data.tutorial_video || null,
       workflow: data.workflow,
       useCases: data.use_cases,
       example: data.example,
@@ -579,6 +598,8 @@ function writeGeneratedFiles(skills) {
     fs.mkdirSync(destinationDir, { recursive: true });
     fs.copyFileSync(source, path.join(destinationDir, 'SKILL.md'));
     fs.writeFileSync(path.join(destinationDir, 'index.html'), renderDetailPage(skill));
+    const mediaDir = path.join(skillsRoot, skill.id, 'media');
+    if (fs.existsSync(mediaDir)) fs.cpSync(mediaDir, path.join(destinationDir, 'media'), { recursive: true });
   }
 
   updateHomepageSeo(publicSkills);

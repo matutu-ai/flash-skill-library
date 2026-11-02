@@ -42,10 +42,15 @@ requirements:
   - "企业事实与结论需要可验证来源；缺失信息必须明确标注。"
   - "完整执行需要按 INDEX.md 路由读取仓库中的 schemas、workflows、templates 与 references。"
   - "任何客户语料库读取、创建或更新均需遵守正式入口中的确认规则。"
+tutorial_video:
+  title: "豆包使用教程（60 秒）"
+  src: "media/doubao-tutorial.mp4"
+  poster: "media/doubao-tutorial-poster.jpg"
 platform_usage:
   - name: "豆包"
     summary: "在豆包里上传技能和企业资料，按你的要求生成四类关键词、九大画像等 Markdown 交付物；缺资料就标「待补」，不编造。"
     steps:
+      - "先切换模式：点豆包输入框左下角的「云电脑」，选「工作任务 · 云电脑」。"
       - "打开豆包，新建对话；上传或粘贴本技能的 SKILL.md（或从技能页下载的技能包）。"
       - "再上传企业资料：介绍、产品/服务说明、案例、表格（xlsx/docx）、图片或网页链接。"
       - "用一句话说清要做什么，例如：「分析这些资料，先给出四类推荐词表，再生成九大画像，输出 Markdown 文件。」"
