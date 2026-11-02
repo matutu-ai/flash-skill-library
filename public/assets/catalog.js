@@ -276,7 +276,11 @@ window.SKILL_CATALOG = [
         ]
       }
     ],
-    "tutorialVideo": null,
+    "tutorialVideo": {
+      "title": "豆包使用教程（60 秒）",
+      "src": "media/doubao-tutorial.mp4",
+      "poster": "media/doubao-tutorial-poster.jpg"
+    },
     "workflow": [
       "读取客户资料并确认已有与缺失内容",
       "建立企业实体、Evidence Graph 与 AI 认知记录",
