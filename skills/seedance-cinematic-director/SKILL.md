@@ -28,3 +28,12 @@ Give a concise Chinese director note, followed by one copy-ready prompt in the s
 Do not promise unsupported platform parameters. Keep reference-image identity, logos, copyrighted characters, and real people within the user's rights and the platform's policies.
 
 For final Seedance 2.5 export, consult [Seedance 2.5 export adapter](references/seedance25_export_adapter.md). This is an output-layer reference to `matutu-ai/seedance2.5-skill`; the existing director modules and their section order remain unchanged.
+
+## 如何在豆包中使用
+
+1. 打开豆包，新建对话，上传或粘贴本技能的 `SKILL.md`。
+2. 再提供故事/Brief 和参考素材，并写明已知的模型、时长、画幅与必须保留的元素。
+3. 明确说要中文导演说明、完整 Prompt 和质量评分，并给出时长与画幅。
+4. 缺参数就回「没有 / 待补」，允许保守假设但必须标明，不要虚构平台能力。
+5. 复制导演说明与 Prompt；只改不合格部分即可。
+6. 把定稿 Prompt 贴到目标模型入口生成；换故事请新开对话。

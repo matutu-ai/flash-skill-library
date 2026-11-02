@@ -273,3 +273,12 @@ python scripts/generate_precheck.py --check
 ## 参考资料
 
 [references/source-doc.md](references/source-doc.md) 保留为 Legacy Operational Knowledge：九大画像、EEAAP、EEAT、发布策略、训练策略、NAP 和效果排查规则都在其中。引擎优先真实数据、证据、AI 观察、Query 结果和竞品差距，再参考这些运营经验。
+
+## 如何在豆包中使用
+
+1. 打开豆包，新建对话，上传或粘贴本技能的 `SKILL.md`。
+2. 再上传企业事实、材料，以及真实的 AI 搜索/问答记录、已确认竞品和证据。
+3. 明确说：「做企业初次 GEO 诊断，输出诊断报告 Markdown，并给出 P0–P3 行动。」
+4. 缺资料就回「没有 / 待补 / 未跑过」，不要让它编模拟排名。
+5. 下载诊断报告；要改某一层说明即可。
+6. 可按提示补资料复测或导出待办；换企业请新开对话。
