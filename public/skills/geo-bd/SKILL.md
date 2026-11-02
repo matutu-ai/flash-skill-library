@@ -276,6 +276,8 @@ python scripts/generate_precheck.py --check
 
 ## 如何在豆包中使用
 
+视频教程（60 秒）：[media/doubao-tutorial.mp4](media/doubao-tutorial.mp4)
+
 1. 打开豆包，新建对话，上传或粘贴本技能的 `SKILL.md`。
 2. 切换模式：点豆包输入框左下角的「云电脑」，选「工作任务 · 云电脑」。
 3. 再上传企业事实、材料，以及真实的 AI 搜索/问答记录、已确认竞品和证据。

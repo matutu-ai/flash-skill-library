@@ -42,6 +42,10 @@ requirements:
   - "完整 AI 表现判断需要真实 observed 或 provided AI 记录；模拟记录不参与评分。"
   - "竞品与 Evidence 需要来源和状态，缺失数据必须保持 UNKNOWN、NOT_RUN 或 INSUFFICIENT_DATA。"
   - "运行仓库诊断脚本需要 Python 3；默认可使用 ManualProvider 或 OfflineProvider。"
+tutorial_video:
+  title: "豆包使用教程（60 秒）"
+  src: "media/doubao-tutorial.mp4"
+  poster: "media/doubao-tutorial-poster.jpg"
 platform_usage:
   - name: "豆包"
     summary: "在豆包里上传诊断技能和企业真实资料，生成 GEO 初次诊断报告与行动计划；缺数据标「待补」，不编排名。"
