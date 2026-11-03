@@ -434,7 +434,11 @@ window.SKILL_CATALOG = [
         ]
       }
     ],
-    "tutorialVideo": null,
+    "tutorialVideo": {
+      "title": "豆包使用教程（60 秒）",
+      "src": "media/doubao-tutorial.mp4",
+      "poster": "media/doubao-tutorial-poster.jpg"
+    },
     "workflow": [
       "分析场景类型、戏剧目标、冲突、时间地点、视觉风格与起承转合",
       "为人物建立可观察的表情、呼吸、姿态、手部和动作过渡",
