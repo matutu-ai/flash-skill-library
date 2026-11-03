@@ -47,6 +47,10 @@ requirements:
   - "模型、时长、画幅或参考素材职责未提供时，必须使用保守假设并明确标注。"
   - "不得承诺模型不支持的平台参数；参考人物、Logo、版权角色和真人素材必须符合授权与平台规则。"
   - "Seedance 2.5 最终导出需要同时遵守仓库内的 Seedance 2.5 Export Adapter。"
+tutorial_video:
+  title: "豆包使用教程（60 秒）"
+  src: "media/doubao-tutorial.mp4"
+  poster: "media/doubao-tutorial-poster.jpg"
 platform_usage:
   - name: "豆包"
     summary: "在豆包里上传电影叙事导演技能与故事/Brief，拿到中文导演说明和可复制的视频 Prompt；未知参数标假设或「待补」。"
