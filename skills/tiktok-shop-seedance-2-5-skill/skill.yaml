@@ -43,6 +43,10 @@ requirements:
   - "近期趋势判断需要真实实时数据；不可用时必须标记 LIVE DATA UNAVAILABLE。"
   - "实际视频生成需要 Seedance 2.5；视频和音频分析可能依赖 ffmpeg、ffprobe、yt-dlp 与转写工具。"
   - "真人肖像、竞品素材和受版权保护内容必须具有相应授权。"
+tutorial_video:
+  title: "TikTok Shop · 海外电商视频 · 豆包使用教程"
+  src: "media/doubao-tutorial.mp4"
+  poster: "media/doubao-tutorial-poster.jpg"
 platform_usage:
   - name: "豆包"
     summary: "在豆包里上传海外电商视频技能与产品信息，拿到 UGC 脚本、分镜和 Seedance 提示词；没有实时趋势就标明「暂无」。"

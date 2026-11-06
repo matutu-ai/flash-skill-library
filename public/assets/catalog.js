@@ -37,7 +37,11 @@ window.SKILL_CATALOG = [
         ]
       }
     ],
-    "tutorialVideo": null,
+    "tutorialVideo": {
+      "title": "Seedance 2.5 · 商业视频导演 · 豆包使用教程",
+      "src": "/skills/seedance2-5-skill/media/doubao-tutorial.mp4",
+      "poster": "/skills/seedance2-5-skill/media/doubao-tutorial-poster.jpg"
+    },
     "workflow": [
       "识别并规范产品、人物、场景、参考素材与广告目标",
       "分析主体并建立产品锁与人物身份锁",
@@ -116,7 +120,11 @@ window.SKILL_CATALOG = [
         ]
       }
     ],
-    "tutorialVideo": null,
+    "tutorialVideo": {
+      "title": "TikTok Shop · 海外电商视频 · 豆包使用教程",
+      "src": "/skills/tiktok-shop-seedance-2-5-skill/media/doubao-tutorial.mp4",
+      "poster": "/skills/tiktok-shop-seedance-2-5-skill/media/doubao-tutorial-poster.jpg"
+    },
     "workflow": [
       "根据产品、链接、参考视频或趋势请求自动选择工作流",
       "分析产品、受众与目标市场本地化",
@@ -357,7 +365,11 @@ window.SKILL_CATALOG = [
         ]
       }
     ],
-    "tutorialVideo": null,
+    "tutorialVideo": {
+      "title": "国际版 GEO · 九大单元 · 豆包使用教程",
+      "src": "/skills/danyuange/media/doubao-tutorial.mp4",
+      "poster": "/skills/danyuange/media/doubao-tutorial-poster.jpg"
+    },
     "workflow": [
       "依据客户真实填写字段判定制造商或服务商",
       "选择对应官方模板并清空示例数据",
