@@ -43,6 +43,10 @@ requirements:
   - "实际视频生成需要 Seedance 2.5、即梦或豆包的相应能力。"
   - "完整流程需要源仓库中的 QUICK-START、workflow、template、schema 与 Human Realism 资源。"
   - "本 Skill 不承担海外市场研究、TikTok 趋势研究或广告投放策略。"
+tutorial_video:
+  title: "Seedance 2.5 · 商业视频导演 · 豆包使用教程"
+  src: "media/doubao-tutorial.mp4"
+  poster: "media/doubao-tutorial-poster.jpg"
 platform_usage:
   - name: "豆包"
     summary: "在豆包里上传商业视频导演技能与产品/人物素材，拿到可直接复制的 Seedance 提示词；缺授权或素材就标「待补」。"

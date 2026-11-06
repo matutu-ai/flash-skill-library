@@ -42,6 +42,10 @@ requirements:
   - "需要配套的制造商或服务商官方 xlsx 模板及 references 文件。"
   - "所有内容必须来自客户真实填写资料，缺失字段保持空白并列入独立清单。"
   - "执行环境需要能够读取和写入 xlsx 文件。"
+tutorial_video:
+  title: "国际版 GEO · 九大单元 · 豆包使用教程"
+  src: "media/doubao-tutorial.mp4"
+  poster: "media/doubao-tutorial-poster.jpg"
 platform_usage:
   - name: "豆包"
     summary: "在豆包里上传九大单元技能、官方模板和客户填写表，导出英文原版与中文分析版工作簿，缺失项单独成清单。"

@@ -314,7 +314,7 @@ function renderTutorialJump(video) {
 }
 
 function renderHomepageTutorials(skills) {
-  const preferred = ['geo', 'geo-bd', 'seedance-cinematic-director'];
+  const preferred = ['geo', 'geo-bd', 'seedance-cinematic-director', 'seedance2-5-skill', 'tiktok-shop-seedance-2-5-skill', 'danyuange'];
   const withVideo = skills.filter(skill => skill.tutorialVideo);
   const items = [
     ...preferred.map(id => withVideo.find(skill => skill.id === id)).filter(Boolean),

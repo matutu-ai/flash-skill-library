@@ -146,6 +146,8 @@ Identity 回答“这个人是谁”；Human Realism 回答“这个人如何像
 
 ## 如何在豆包中使用
 
+视频教程（60 秒）：[media/doubao-tutorial.mp4](media/doubao-tutorial.mp4)
+
 1. 打开豆包，新建对话，上传或粘贴本技能的 `SKILL.md`。
 2. 切换模式：点豆包输入框左下角的「云电脑」，选「工作任务 · 云电脑」。
 3. 再上传产品/人物/场景图、资料、参考视频或广告 Brief。
