@@ -300,12 +300,17 @@ function normalizeTutorialVideo(video, skillId) {
 function renderTutorialVideo(video) {
   if (!video) return '';
   return `
-          <figure class="skill-detail-video">
+          <figure class="skill-detail-video" id="tutorial-video">
             <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
               <a href="${escapeHtml(video.src)}">下载使用教程视频</a>
             </video>
             <figcaption>${escapeHtml(video.title)}</figcaption>
           </figure>`;
+}
+
+function renderTutorialJump(video) {
+  if (!video) return '';
+  return `<a class="text-link skill-detail-tutorial-jump" href="#tutorial-video">▶ 看使用教程</a>`;
 }
 
 function renderHomepageTutorials(skills) {
@@ -401,6 +406,7 @@ function renderDetailPage(skill) {
           <h1>${escapeHtml(skill.name)}</h1>
           <p class="skill-detail-subtitle">${escapeHtml(skill.subtitle)}</p>
           <p class="skill-detail-lede">${escapeHtml(skill.description)}</p>
+          ${renderTutorialJump(skill.tutorialVideo)}
           <ul class="skill-detail-tags" aria-label="技能标签">${tags}</ul>
           <div class="skill-detail-actions">
             <button class="button button-dark" data-copy-prompt>复制 Prompt <span aria-hidden="true">↗</span></button>
