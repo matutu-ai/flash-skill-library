@@ -197,8 +197,8 @@ window.SKILL_CATALOG = [
     ],
     "tutorialVideo": {
       "title": "豆包使用教程（60 秒）",
-      "src": "media/doubao-tutorial.mp4",
-      "poster": "media/doubao-tutorial-poster.jpg"
+      "src": "/skills/geo/media/doubao-tutorial.mp4",
+      "poster": "/skills/geo/media/doubao-tutorial-poster.jpg"
     },
     "workflow": [
       "清洗企业资料并区分事实、证据与缺失项",
@@ -278,8 +278,8 @@ window.SKILL_CATALOG = [
     ],
     "tutorialVideo": {
       "title": "豆包使用教程（60 秒）",
-      "src": "media/doubao-tutorial.mp4",
-      "poster": "media/doubao-tutorial-poster.jpg"
+      "src": "/skills/geo-bd/media/doubao-tutorial.mp4",
+      "poster": "/skills/geo-bd/media/doubao-tutorial-poster.jpg"
     },
     "workflow": [
       "读取客户资料并确认已有与缺失内容",
@@ -436,8 +436,8 @@ window.SKILL_CATALOG = [
     ],
     "tutorialVideo": {
       "title": "豆包使用教程（60 秒）",
-      "src": "media/doubao-tutorial.mp4",
-      "poster": "media/doubao-tutorial-poster.jpg"
+      "src": "/skills/seedance-cinematic-director/media/doubao-tutorial.mp4",
+      "poster": "/skills/seedance-cinematic-director/media/doubao-tutorial-poster.jpg"
     },
     "workflow": [
       "分析场景类型、戏剧目标、冲突、时间地点、视觉风格与起承转合",

@@ -284,13 +284,65 @@ function renderPlatformUsage(guides) {
           </article>`).join('');
 }
 
+function normalizeTutorialVideo(video, skillId) {
+  if (!video) return null;
+  const toPublicPath = (value) => {
+    if (/^https?:\/\//i.test(value) || value.startsWith('/')) return value;
+    return `/skills/${skillId}/${value.replace(/^\.\//, '')}`;
+  };
+  return {
+    title: video.title,
+    src: toPublicPath(video.src),
+    poster: toPublicPath(video.poster)
+  };
+}
+
 function renderTutorialVideo(video) {
   if (!video) return '';
   return `
           <figure class="skill-detail-video">
-            <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}"></video>
+            <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
+              <a href="${escapeHtml(video.src)}">下载使用教程视频</a>
+            </video>
             <figcaption>${escapeHtml(video.title)}</figcaption>
           </figure>`;
+}
+
+function renderHomepageTutorials(skills) {
+  const preferred = ['geo', 'geo-bd', 'seedance-cinematic-director'];
+  const withVideo = skills.filter(skill => skill.tutorialVideo);
+  const items = [
+    ...preferred.map(id => withVideo.find(skill => skill.id === id)).filter(Boolean),
+    ...withVideo.filter(skill => !preferred.includes(skill.id))
+  ];
+  if (!items.length) return '';
+  const cards = items.map((skill, index) => {
+    const video = skill.tutorialVideo;
+    return `
+        <article class="home-tutorial-card">
+          <p class="home-tutorial-kicker">${String(index + 1).padStart(2, '0')} / ${escapeHtml(skill.category)}</p>
+          <h3>${escapeHtml(skill.name)}</h3>
+          <figure class="skill-detail-video home-tutorial-video">
+            <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
+              <a href="${escapeHtml(video.src)}">下载使用教程视频</a>
+            </video>
+            <figcaption>${escapeHtml(video.title)}</figcaption>
+          </figure>
+          <a class="text-link" href="/${escapeHtml(skill.url)}#platform-usage">打开技能详情里的使用方法 →</a>
+        </article>`;
+  }).join('');
+  return `
+    <section class="home-tutorials page-width" id="tutorials" aria-labelledby="tutorials-title">
+      <div class="home-tutorials-heading">
+        <div>
+          <p class="eyebrow">HOW TO USE ON DOUBAO</p>
+          <h2 id="tutorials-title">使用教程视频</h2>
+          <p>先看 60 秒操作流程，再打开对应技能页跟做。首页优先展示 GEO V3。</p>
+        </div>
+        <span class="collection-count"><b>${String(items.length).padStart(2, '0')}</b> TUTORIALS ONLINE</span>
+      </div>
+      <div class="home-tutorials-grid">${cards}</div>
+    </section>`;
 }
 
 function renderDetailPage(skill) {
@@ -536,7 +588,7 @@ function readActiveSkills() {
       output: data.output,
       requirements: data.requirements,
       platformUsage: data.platform_usage,
-      tutorialVideo: data.tutorial_video || null,
+      tutorialVideo: normalizeTutorialVideo(data.tutorial_video || null, data.id),
       workflow: data.workflow,
       useCases: data.use_cases,
       example: data.example,
@@ -603,6 +655,18 @@ function writeGeneratedFiles(skills) {
   }
 
   updateHomepageSeo(publicSkills);
+  const indexPath = path.join(root, 'public', 'index.html');
+  let indexHtml = fs.readFileSync(indexPath, 'utf8');
+  const tutorialsMarkerStart = '<!-- TUTORIALS:START -->';
+  const tutorialsMarkerEnd = '<!-- TUTORIALS:END -->';
+  if (!indexHtml.includes(tutorialsMarkerStart) || !indexHtml.includes(tutorialsMarkerEnd)) {
+    fail('public/index.html 缺少 TUTORIALS 标记');
+  }
+  indexHtml = indexHtml.replace(
+    new RegExp(`${tutorialsMarkerStart}[\\s\\S]*?${tutorialsMarkerEnd}`),
+    `${tutorialsMarkerStart}${renderHomepageTutorials(publicSkills)}${tutorialsMarkerEnd}`
+  );
+  fs.writeFileSync(indexPath, indexHtml);
   fs.writeFileSync(path.join(root, 'public', 'sitemap.xml'), renderSitemap(publicSkills));
   fs.writeFileSync(
     path.join(root, 'public', 'robots.txt'),
