@@ -1,4 +1,4 @@
-# A2P Seedance · 创意到提示词交付
+# A2P Seedance · 八大玩法
 
 本档案对应公开技能仓库 [matutu-ai/A2P-seedance-skill](https://github.com/matutu-ai/A2P-seedance-skill) 中的 `lingguo-seedance-master`，一仓库一卡。演示案例与媒体文件保留在原私有仓库。
 

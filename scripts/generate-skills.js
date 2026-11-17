@@ -274,6 +274,19 @@ function renderList(items, className = '') {
   return `<ul${classAttribute}>${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
+function renderPlayModes(skill) {
+  if (!skill.playModes?.length) return '';
+  const modes = skill.playModes.map((mode, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><div><strong>${escapeHtml(mode.name)}</strong><p>${escapeHtml(mode.summary)}</p></div></li>`).join('');
+  return `        <section class="skill-detail-section" id="play-modes">
+          <p class="skill-detail-section-label">EIGHT PLAYS</p>
+          <h2>八大玩法有哪些</h2>
+          <p class="skill-detail-play-intro">这些是创作案例分类，不是 Seedance 官方模式。选定玩法后，还需按目标平台核对实际可用的生成方式和素材限制。</p>
+          <ol class="skill-detail-use-steps">${modes}</ol>
+        </section>
+
+`;
+}
+
 function renderPlatformUsage(guides) {
   return guides.map(guide => `
           <article class="skill-detail-platform-card">
@@ -426,7 +439,7 @@ function renderDetailPage(skill) {
 
     <div class="skill-detail-layout page-width">
       <article class="skill-detail-content">
-        <section class="skill-detail-section" id="use-cases">
+${renderPlayModes(skill)}        <section class="skill-detail-section" id="use-cases">
           <p class="skill-detail-section-label">01 / USE CASES</p>
           <h2>适合用来做什么</h2>
           ${renderList(skill.useCases, 'skill-detail-list')}
@@ -469,7 +482,7 @@ function renderDetailPage(skill) {
 
       <aside class="skill-detail-aside">
         <nav class="skill-detail-toc" aria-label="页内目录">
-          <span>ON THIS PAGE</span>
+          <span>ON THIS PAGE</span>${skill.playModes?.length ? '\n          <a href="#play-modes">八大玩法</a>' : ''}
           <a href="#use-cases">使用场景</a>
           <a href="#prompt">Prompt</a>
           <a href="#workflow">Workflow</a>
@@ -535,6 +548,10 @@ function readActiveSkills() {
     if (!Array.isArray(data.platform_usage) || !data.platform_usage.length) {
       fail(`${entry.name}: platform_usage 必须是非空数组`);
     }
+    if (data.play_modes !== undefined && (
+      !Array.isArray(data.play_modes) || data.play_modes.length !== 8 ||
+      data.play_modes.some(mode => typeof mode?.name !== 'string' || !mode.name.trim() || typeof mode?.summary !== 'string' || !mode.summary.trim())
+    )) fail(`${entry.name}: play_modes 必须包含八个名称和简介`);
     if (data.tutorial_video !== undefined) {
       const video = data.tutorial_video;
       for (const key of ['title', 'src', 'poster']) {
@@ -597,6 +614,7 @@ function readActiveSkills() {
       tutorialVideo: normalizeTutorialVideo(data.tutorial_video || null, data.id),
       workflow: data.workflow,
       useCases: data.use_cases,
+      ...(data.play_modes ? { playModes: data.play_modes } : {}),
       example: data.example,
       tags: data.tags,
       model: data.model,
