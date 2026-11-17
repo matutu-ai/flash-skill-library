@@ -314,7 +314,7 @@ function renderTutorialVideo(video) {
   if (!video) return '';
   return `
           <figure class="skill-detail-video" id="tutorial-video">
-            <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
+            <video controls preload="none" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
               <a href="${escapeHtml(video.src)}">下载使用教程视频</a>
             </video>
             <figcaption>${escapeHtml(video.title)}</figcaption>
@@ -341,7 +341,7 @@ function renderHomepageTutorials(skills) {
           <p class="home-tutorial-kicker">${String(index + 1).padStart(2, '0')} / ${escapeHtml(skill.category)}</p>
           <h3>${escapeHtml(skill.name)}</h3>
           <figure class="skill-detail-video home-tutorial-video">
-            <video controls preload="metadata" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
+            <video controls preload="none" playsinline poster="${escapeHtml(video.poster)}" src="${escapeHtml(video.src)}">
               <a href="${escapeHtml(video.src)}">下载使用教程视频</a>
             </video>
             <figcaption>${escapeHtml(video.title)}</figcaption>
