@@ -451,7 +451,7 @@ function renderDetailPage(skill) {
 
         <section class="skill-detail-section" id="platform-usage">
           <p class="skill-detail-section-label">05 / PLATFORM USE</p>
-          <h2>豆包、千问怎么使用</h2>${renderTutorialVideo(skill.tutorialVideo)}
+          <h2>平台使用方法</h2>${renderTutorialVideo(skill.tutorialVideo)}
           <div class="skill-detail-platform-grid">${renderPlatformUsage(skill.platformUsage)}</div>
         </section>
 
